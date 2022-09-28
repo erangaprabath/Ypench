@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "428058766391",
+    "project_id": "ypench-travel-app",
+    "storage_bucket": "ypench-travel-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428058766391:android:c0b6a18192d8b987d8a3b2",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428058766391-vg7nbc2pqglscfn8ivde49uagufre7pr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCd5fWlYVxklAdvaHhh3dhDG4zeqg4LKwI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428058766391-vg7nbc2pqglscfn8ivde49uagufre7pr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "428058766391-krd67hsnjjgdb3ujaoihjqqh39mo90g6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.flutterApplication1"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
