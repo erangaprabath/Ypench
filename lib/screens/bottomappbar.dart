@@ -17,9 +17,9 @@ class appbar extends StatefulWidget {
 class _appbarState extends State<appbar> {
   int _currentIndex = 0;
   final screens = [
-    const mainScreen(),
+    mainScreen(),
     mapView(),
-    const cardAdd(),
+    cardAdd(),
     profileScreen(),
   ];
 
@@ -33,43 +33,39 @@ class _appbarState extends State<appbar> {
     }
 
     return Scaffold(
-      body: screens[_currentIndex],
-      bottomNavigationBar:
-          context.watch<internetConnectionChecker>().setnetworkState
-              ? BottomNavigationBar(
-                  selectedFontSize: 10,
-                  unselectedFontSize: 10,
-                  iconSize: MediaQuery.of(context).size.height / 40,
-                  type: BottomNavigationBarType.fixed,
-                  backgroundColor: Color.fromARGB(0, 245, 0, 0),
-                  elevation: 0,
-                  selectedItemColor: Colors.blue,
-                  currentIndex: _currentIndex,
-                  items: [
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.home_outlined),
-                      label: 'Home',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.map_outlined),
-                      label: 'Map',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.add_card_outlined),
-                      label: 'Add Card',
-                    ),
-                    BottomNavigationBarItem(
-                      icon: Icon(Icons.account_circle_outlined),
-                      label: 'profile',
-                    ),
-                  ],
-                  onTap: (index) {
-                    setState(() {
-                      _currentIndex = index;
-                    });
-                  },
-                )
-              : CircularProgressIndicator.adaptive(),
-    );
+        body: screens[_currentIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          selectedFontSize: 10,
+          unselectedFontSize: 10,
+          iconSize: MediaQuery.of(context).size.height / 40,
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Color.fromARGB(0, 245, 0, 0),
+          elevation: 0,
+          selectedItemColor: Colors.blue,
+          currentIndex: _currentIndex,
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_outlined),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.map_outlined),
+              label: 'Map',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_card_outlined),
+              label: 'Add Card',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_outlined),
+              label: 'profile',
+            ),
+          ],
+          onTap: (index) {
+            setState(() {
+              _currentIndex = index;
+            });
+          },
+        ));
   }
 }

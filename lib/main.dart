@@ -1,6 +1,10 @@
 // ignore_for_file: unnecessary_import
 
+import 'package:flutter_application_1/common/topbar.dart';
 import 'package:flutter_application_1/screens/internetConnectionChecker.dart';
+import 'package:flutter_application_1/screens/listview.dart';
+import 'package:flutter_application_1/screens/loginPage.dart';
+import 'package:flutter_application_1/screens/mainScreen.dart';
 import 'package:flutter_application_1/screens/practiseUI.dart';
 import 'package:load/load.dart';
 import 'package:flutter/material.dart';
@@ -36,10 +40,7 @@ class _AppState extends State<App> {
   @override
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: checkLogin(),
-      );
+      return MaterialApp(debugShowCheckedModeBanner: false, home: checkLogin());
     });
   }
 }

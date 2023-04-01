@@ -575,7 +575,7 @@ class _mainScreenState extends State<mainScreen> {
           color: Color.fromARGB(255, 255, 255, 255),
           snapSpec: const SnapSpec(
             snap: true,
-            snappings: [0.4, 0.7, 0.7],
+            snappings: [0.4, 0.5, 0.7],
             positioning: SnapPositioning.relativeToAvailableSpace,
           ),
           builder: (context, state) {
@@ -696,7 +696,7 @@ class _mainScreenState extends State<mainScreen> {
                     height: 20,
                   ),
                   Container(
-                    height: 1100,
+                    height: MediaQuery.of(context).size.height / 2,
                     width: 600,
                     color: Color.fromARGB(255, 255, 255, 255),
                     child: Column(
@@ -716,7 +716,7 @@ class _mainScreenState extends State<mainScreen> {
                               fontSize: MediaQuery.of(context).size.height / 50,
                               fontWeight: FontWeight.normal),
                           child: const Text(
-                            "Built at 3100m above sea level, among the craggy peaks of the Central Highlands; the Nine Arches forms a viaduct between the Demodara and Ella Railway stations. Built entirely out of brick, rock and cement; without a single piece of steel; the bridge has stood solid from 1921, its time of creation. According to history, the bridge was built by the locals using such materials; when the construction came to a standstill from the lack of steel caused by World War I. But, in addition to this history; lore abounds the creation of the bridge.The most famous story speaks of a man named P. K. Appuhami, who lived in the Kappatipola area in Melimada. Born in 1870, Appuhami was a famed traditional drummer and devil dancer (a ritual dance form). One day, while returning home gloomily as he lost a competition, Appuhami was seen by a British official. The man was extremely frightened by the devilish apparition (Appuhami was still in his dance costume) at the beginning; but soon became quite friendly. Learning that the strange foreigner was in his area to construct a railway; Appuhami assisted by supplying him with labour from the local villages.But things did not go smoothly with the railway construction. They found that they were unable to bridge a large gap between two hills; as there was a quagmire in the valley in between. It was not possible to create firm anchoring, due to the marshy ground. On learning this, Appuhami requested to take over the bridge project. While he was rejected initially, they agreed later; as he had gained their trust with his assistance and friendship. As the story goes, Appuhami started working on the bridge in 1913. He solved the issue of the unstable ground by toppling giant rocks into the space; until a firm bed of rocks was formed. He then created the bridge’s brick columns over this bed and continued with the construction of the bridge.The methods of constructions used by Appuhami proved to be so intuitive and cost effective; that he finished the entire project, which was intended to continue for many years, within a single year at a fraction of the original cost planned. The British officials were so shocked that the ‘savages’ had finished such a huge project so easily; that they refused to believe its structural integrity. At this point Appuhami is said to have sworn to the strength of the structure by saying he would prove it by lying under the bridge; when the railway line was used for the first time. Once the track was completed, he kept to his promise; awing the officials with his achievement.Most interestingly, the story also states that Appuhami was then offered payment in the form of the balance costs that he saved with his inexpensive construction methods. The folklore speaks of the happy day when Appuhami returned to his village with four carts of silver coins. He then proceeded to spend it on meals for his village and the neighboring village for an entire two days, while also giving each villager a silver coin.",
+                            "Built at 3100m above sea level, among the craggy peaks of the Central Highlands; the Nine Arches forms a viaduct between the Demodara and Ella Railway stations. Built entirely out of brick, rock and cement; without a single piece of steel; the bridge has stood solid from 1921, its time of creation. According to history, the bridge was built by the locals using such materials; when the construction came to a standstill from the lack of steel caused by World War I. But, in addition to this history; lore abounds the creation of the bridge.",
                           ),
                         ),
                       ],

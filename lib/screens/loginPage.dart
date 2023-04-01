@@ -12,7 +12,6 @@ class homeScreen extends StatefulWidget {
   _homeScreenState createState() => _homeScreenState();
 }
 
-// ignore: camel_case_types
 class _homeScreenState extends State<homeScreen> {
   final passwordPW = TextEditingController();
   final _emailcontroller = TextEditingController();

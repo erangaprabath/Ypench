@@ -292,7 +292,7 @@ class _campainPageState extends State<campainPage> {
                             height: MediaQuery.of(context).size.height / 50,
                           ),
                           Text(
-                            'Best Camping Places In ountry',
+                            'Best Camping Places In Country',
                             style: TextStyle(
                                 fontSize:
                                     MediaQuery.of(context).size.height / 40,
@@ -382,7 +382,7 @@ class _campainPageState extends State<campainPage> {
                                           blurRadius: 20,
                                           spreadRadius: 2),
                                     ],
-                                    image: const DecorationImage(
+                                    image: DecorationImage(
                                         image: NetworkImage(
                                           'https://thesailor343.files.wordpress.com/2019/01/lrm_export_76331017815956_20190106_114112455-01.jpeg?w=1400',
                                         ),
@@ -771,7 +771,7 @@ class _yalaindiseState extends State<yalaindise> {
                       bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
                       image: NetworkImage(
-                          'https://www.kkcollection.com/wp-content/uploads/2021/03/yala-header-tab-5.jpg'),
+                          'https://www.worldatlas.com/upload/7f/6c/cf/shutterstock-513139585.jpg'),
                       fit: BoxFit.cover),
                 ),
                 child: Column(
@@ -955,39 +955,15 @@ class _yalaindiseState extends State<yalaindise> {
                 child: Row(
                   children: <Widget>[
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.redAccent),
                     ),
                     Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 1.61,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.redAccent),
@@ -1003,15 +979,39 @@ class _yalaindiseState extends State<yalaindise> {
                 child: Row(
                   children: [
                     Container(
-                      height: 100,
-                      width: 100,
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 4,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.redAccent),
                     ),
                     Container(
-                      height: 100,
-                      width: 278,
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 1.61,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.redAccent),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Row(
+                  children: [
+                    Container(
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 4,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20.0),
+                          color: Colors.redAccent),
+                    ),
+                    Container(
+                      height: MediaQuery.of(context).size.height / 8,
+                      width: MediaQuery.of(context).size.width / 1.61,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20.0),
                           color: Colors.redAccent),
@@ -1043,7 +1043,7 @@ class _yalaindiseState extends State<yalaindise> {
           ),
           builder: (context, state) {
             return Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: Column(
                   children: <Widget>[
@@ -1063,7 +1063,7 @@ class _yalaindiseState extends State<yalaindise> {
                           children: <Widget>[
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
                                     image: NetworkImage(
@@ -1078,7 +1078,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1093,7 +1093,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1108,7 +1108,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1120,14 +1120,11 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                           ],
                         ),
-                        SizedBox(
-                          width: 10,
-                        ),
                         Column(
                           children: <Widget>[
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1142,7 +1139,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1157,7 +1154,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1172,7 +1169,7 @@ class _yalaindiseState extends State<yalaindise> {
                             ),
                             Container(
                               height: 200,
-                              width: 200,
+                              width: MediaQuery.of(context).size.width / 2,
                               decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image: NetworkImage(
@@ -1688,7 +1685,9 @@ class _belihuloyaInsideState extends State<belihuloyaInside> {
                       spreadRadius: 1,
                     )
                   ],
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
                       image: NetworkImage(
                           'https://preview.redd.it/6qzo90344n281.jpg?auto=webp&s=7a07ebf884d068e8cf56c80919d1488cd63090ec'),
@@ -2148,7 +2147,9 @@ class _knucklesInsideState extends State<knucklesInside> {
                       spreadRadius: 1,
                     )
                   ],
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
                       image: NetworkImage(
                           'https://www.amayaresorts.com/blog/wp-content/uploads/sites/3/2018/10/Knuckles-Mountain-Range-Sri-Lanka.jpg'),
@@ -2608,7 +2609,9 @@ class _kithulgalaInsideState extends State<kithulgalaInside> {
                       spreadRadius: 1,
                     )
                   ],
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
                       image: NetworkImage(
                           'https://dazzlingtours.com/wp-content/uploads/2016/12/02-2.jpg'),
@@ -3069,7 +3072,9 @@ class _vaddaVilageinsideState extends State<vaddaVilageinside> {
                       spreadRadius: 1,
                     )
                   ],
-                  borderRadius: BorderRadius.circular(50),
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
                       image: NetworkImage(
                           'https://media.istockphoto.com/photos/vedda-people-sri-lanka-picture-id117148259?k=20&m=117148259&s=612x612&w=0&h=AHELaP2MZ9YuxoGB6LdjLGAE5exniQg5Rhmw3xM2TYw='),
