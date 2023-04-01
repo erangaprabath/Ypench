@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screens/bottomappbar.dart';
+import 'package:flutter_application_1/widget/container/hotel_view.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
@@ -3075,7 +3076,10 @@ class _vaddaVilageinsideState extends State<vaddaVilageinside> {
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(50),
                       bottomRight: Radius.circular(50)),
-                  image: const DecorationImage(
+                  image: DecorationImage(
+                      onError: (exception, stackTrace) {
+                        throw ArgumentError.value(exception);
+                      },
                       image: NetworkImage(
                           'https://media.istockphoto.com/photos/vedda-people-sri-lanka-picture-id117148259?k=20&m=117148259&s=612x612&w=0&h=AHELaP2MZ9YuxoGB6LdjLGAE5exniQg5Rhmw3xM2TYw='),
                       fit: BoxFit.cover),
@@ -3254,78 +3258,22 @@ class _vaddaVilageinsideState extends State<vaddaVilageinside> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: 5,
+                    itemBuilder: ((context, index) {
+                      return Column(
+                        children: [
+                          HotelView(),
+                          SizedBox(
+                            height: 10,
+                          )
+                        ],
+                      );
+                    })),
+              )
             ],
           ),
         ),
