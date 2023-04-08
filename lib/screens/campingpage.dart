@@ -1,6 +1,8 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/bottomappbar.dart';
 import 'package:flutter_application_1/widget/container/hotel_view.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -3052,9 +3054,12 @@ class vaddaVilageinside extends StatefulWidget {
 }
 
 class _vaddaVilageinsideState extends State<vaddaVilageinside> {
+  servicedata hotel = servicedata();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
+    print("length......");
+    print(hotel.hotel.length);
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
@@ -3258,27 +3263,43 @@ class _vaddaVilageinsideState extends State<vaddaVilageinside> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: ListView.builder(
-                    shrinkWrap: true,
-                    itemCount: 5,
-                    itemBuilder: ((context, index) {
-                      return Column(
-                        children: [
-                          HotelView(),
-                          SizedBox(
-                            height: 10,
-                          )
-                        ],
-                      );
-                    })),
-              )
+              FutureBuilder(
+                future: hotel.get(),
+                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                  if (snapshot.hasData) {
+                    print('----->');
+                    print(snapshot.data?.first.hotelName);
+                    List<Hotel> data = snapshot.data!;
+                    print(data.length);
+                    return ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: data.length,
+                        itemBuilder: ((context, index) {
+                          return InkWell(
+                              onTap: () => bottomSheet(context),
+                              child: HotelView(hotel: data[index]));
+                        }));
+                  } else {
+                    return CircularProgressIndicator();
+                  }
+                }),
+              ),
             ],
           ),
         ),
       ),
     );
+  }
+
+  void bottomSheet(BuildContext context) {
+    showCupertinoModalPopup(
+        context: context,
+        builder: ((context) {
+          return Container(
+            height: 200,
+            color: Colors.amber,
+          );
+        }));
   }
 
   void kuncklesImages() {

@@ -530,7 +530,6 @@ class _mainScreenState extends State<mainScreen> {
                     height: 20,
                   ),
                   Container(
-                    height: 500,
                     width: 600,
                     color: Color.fromARGB(255, 255, 255, 255),
                     child: Column(
