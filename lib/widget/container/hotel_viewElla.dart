@@ -1,23 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/ellaModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HotelView extends StatefulWidget {
-  HotelView({Key? key, required this.hotel}) : super(key: key);
-  final Hotel hotel;
+class hotelViewElla extends StatefulWidget {
+  hotelViewElla({Key? key, required this.hotelElla}) : super(key: key);
+  final HotelElla hotelElla;
 
   @override
-  State<HotelView> createState() => _HotelViewState();
+  State<hotelViewElla> createState() => _hotelViewEllaState();
 }
 
-class _HotelViewState extends State<HotelView> {
+class _hotelViewEllaState extends State<hotelViewElla> {
   @override
   Widget build(BuildContext context) {
     test testcall = test();
 
-    String? rating = widget.hotel.rating;
-    String? number = widget.hotel.contact;
-    String? locationUrl = widget.hotel.locationUrl;
+    String? rating = widget.hotelElla.rating;
+    String? number = widget.hotelElla.contact;
+    String? locationUrl = widget.hotelElla.locationUrl;
     print(number);
     double result = double.parse(rating!);
     return Padding(
@@ -33,7 +34,7 @@ class _HotelViewState extends State<HotelView> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    widget.hotel.ImageUrl ?? '',
+                    widget.hotelElla.ImageUrl ?? '',
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
@@ -64,7 +65,7 @@ class _HotelViewState extends State<HotelView> {
                     Row(
                       children: [
                         Text(
-                          '${widget.hotel.name}',
+                          '${widget.hotelElla.name}',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
@@ -85,7 +86,7 @@ class _HotelViewState extends State<HotelView> {
                       ],
                     ),
                     Text(
-                      '${widget.hotel.address}',
+                      '${widget.hotelElla.address}',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
@@ -111,7 +112,7 @@ class _HotelViewState extends State<HotelView> {
                           width: 5,
                         ),
                         Text(
-                          '(${widget.hotel.rating})',
+                          '(${widget.hotelElla.rating})',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,
@@ -137,7 +138,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.days}',
+                              '${widget.hotelElla.days}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -164,7 +165,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.rooms}',
+                              '${widget.hotelElla.rooms}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -191,7 +192,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'RS:${widget.hotel.price}',
+                              'RS:${widget.hotelElla.price}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,

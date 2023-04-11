@@ -2,9 +2,13 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/belihuloyaModel.dart';
+import 'package:flutter_application_1/model/ellaModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/bottomappbar.dart';
 import 'package:flutter_application_1/widget/container/hotel_view.dart';
+import 'package:flutter_application_1/widget/container/hotel_viewBelihuloya.dart';
+import 'package:flutter_application_1/widget/container/hotel_viewElla.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
@@ -59,19 +63,19 @@ class _campainPageState extends State<campainPage> {
     );
   }
 
-  getInKithulgala() {
-    Navigator.of(context).push(
-      MaterialPageRoute(builder: (_) {
-        return kithulgalaInside();
-      }),
-    );
-  }
+  // getInKithulgala() {
+  //   Navigator.of(context).push(
+  //     MaterialPageRoute(builder: (_) {
+  //       return kithulgalaInside();
+  //     }),
+  //   );
+  // }
 
-  getInVaddaVillage() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return vaddaVilageinside();
-    }));
-  }
+  // getInVaddaVillage() {
+  //   Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+  //     return vaddaVilageinside();
+  //   }));
+  // }
 
   void initState() {
     // TODO: implement initState
@@ -311,7 +315,7 @@ class _campainPageState extends State<campainPage> {
                                 onTap: getinYala,
                                 child: Container(
                                   height:
-                                      MediaQuery.of(context).size.height / 2.4,
+                                      MediaQuery.of(context).size.height / 3.2,
                                   width:
                                       MediaQuery.of(context).size.width / 2.5,
                                   decoration: BoxDecoration(
@@ -325,7 +329,7 @@ class _campainPageState extends State<campainPage> {
                                     color: Colors.red,
                                     image: const DecorationImage(
                                       image: NetworkImage(
-                                          'https://yalasafaricamp.com/images/home/yala-03.jpg'),
+                                          'https://t4.ftcdn.net/jpg/01/30/56/47/360_F_130564726_JiHcgRj4kxKqNVN3BxqUg4Nco69Hkpgu.jpg'),
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -520,7 +524,7 @@ class _campainPageState extends State<campainPage> {
                                 child: Container(
                                   alignment: Alignment.bottomLeft,
                                   height:
-                                      MediaQuery.of(context).size.height / 2.4,
+                                      MediaQuery.of(context).size.height / 3.2,
                                   width:
                                       MediaQuery.of(context).size.width / 2.5,
                                   decoration: BoxDecoration(
@@ -585,149 +589,149 @@ class _campainPageState extends State<campainPage> {
                               ),
                             ],
                           ),
-                          Row(
-                            children: <Widget>[
-                              GestureDetector(
-                                onTap: getInKithulgala,
-                                child: Container(
-                                  alignment: Alignment.bottomLeft,
-                                  height:
-                                      MediaQuery.of(context).size.height / 2.4,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
-                                  decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Color.fromARGB(26, 0, 0, 0),
-                                          blurRadius: 20,
-                                          spreadRadius: 2),
-                                    ],
-                                    image: const DecorationImage(
-                                        image: NetworkImage(
-                                            'https://themiracleisland.com/images/acommodation/borderlands/g7.jpg'),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: Colors.red,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              'Kitulgala',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize:
-                                                      MediaQuery.of(context)
-                                                              .size
-                                                              .height /
-                                                          60,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: <Widget>[
-                                            Icon(
-                                              Icons.location_on_outlined,
-                                              color: Colors.white,
-                                            ),
-                                            Text(
-                                              'Kitulgala, \nSabaragamuwa \nProvince ',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.normal,
-                                                fontSize: MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    70,
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: MediaQuery.of(context).size.width / 19,
-                              ),
-                              GestureDetector(
-                                onTap: getInVaddaVillage,
-                                child: Container(
-                                  alignment: Alignment.bottomLeft,
-                                  height:
-                                      MediaQuery.of(context).size.height / 2.4,
-                                  width:
-                                      MediaQuery.of(context).size.width / 2.5,
-                                  decoration: BoxDecoration(
-                                    boxShadow: const [
-                                      BoxShadow(
-                                          color: Color.fromARGB(26, 0, 0, 0),
-                                          blurRadius: 20,
-                                          spreadRadius: 2),
-                                    ],
-                                    image: const DecorationImage(
-                                        image: NetworkImage(
-                                            'https://travelmapsrilanka.com/img/camping/camping-sri-lanka-udawalawe.jpg'),
-                                        fit: BoxFit.cover),
-                                    borderRadius: BorderRadius.circular(20.0),
-                                    color: Colors.red,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      children: <Widget>[
-                                        Row(
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.start,
-                                          children: <Widget>[
-                                            Text(
-                                              'Vaddha Village',
-                                              style: TextStyle(
-                                                  color: Colors.white,
-                                                  fontSize:
-                                                      MediaQuery.of(context)
-                                                              .size
-                                                              .height /
-                                                          60,
-                                                  fontWeight: FontWeight.bold),
-                                            ),
-                                          ],
-                                        ),
-                                        Row(
-                                          children: <Widget>[
-                                            Icon(
-                                              Icons.location_on_outlined,
-                                              color: Colors.white,
-                                            ),
-                                            Text(
-                                              'Dabana\nEast the city of \nMahiyangana',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontWeight: FontWeight.normal,
-                                                fontSize: MediaQuery.of(context)
-                                                        .size
-                                                        .height /
-                                                    70,
-                                              ),
-                                            )
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          )
+                          // Row(
+                          //   children: <Widget>[
+                          //     GestureDetector(
+                          //       onTap: getInKithulgala,
+                          //       child: Container(
+                          //         alignment: Alignment.bottomLeft,
+                          //         height:
+                          //             MediaQuery.of(context).size.height / 2.4,
+                          //         width:
+                          //             MediaQuery.of(context).size.width / 2.5,
+                          //         decoration: BoxDecoration(
+                          //           boxShadow: const [
+                          //             BoxShadow(
+                          //                 color: Color.fromARGB(26, 0, 0, 0),
+                          //                 blurRadius: 20,
+                          //                 spreadRadius: 2),
+                          //           ],
+                          //           image: const DecorationImage(
+                          //               image: NetworkImage(
+                          //                   'https://www.magicalisleholidays.com/image/pages/accommodation/accommodation-kithulgala/borderlands.jpg'),
+                          //               fit: BoxFit.cover),
+                          //           borderRadius: BorderRadius.circular(20.0),
+                          //           color: Colors.red,
+                          //         ),
+                          //         child: Padding(
+                          //           padding: const EdgeInsets.all(8.0),
+                          //           child: Column(
+                          //             mainAxisAlignment: MainAxisAlignment.end,
+                          //             children: <Widget>[
+                          //               Row(
+                          //                 mainAxisAlignment:
+                          //                     MainAxisAlignment.start,
+                          //                 children: <Widget>[
+                          //                   Text(
+                          //                     'Kitulgala',
+                          //                     style: TextStyle(
+                          //                         color: Colors.white,
+                          //                         fontSize:
+                          //                             MediaQuery.of(context)
+                          //                                     .size
+                          //                                     .height /
+                          //                                 60,
+                          //                         fontWeight: FontWeight.bold),
+                          //                   ),
+                          //                 ],
+                          //               ),
+                          //               Row(
+                          //                 children: <Widget>[
+                          //                   Icon(
+                          //                     Icons.location_on_outlined,
+                          //                     color: Colors.white,
+                          //                   ),
+                          //                   Text(
+                          //                     'Kitulgala, \nSabaragamuwa \nProvince ',
+                          //                     style: TextStyle(
+                          //                       color: Colors.white,
+                          //                       fontWeight: FontWeight.normal,
+                          //                       fontSize: MediaQuery.of(context)
+                          //                               .size
+                          //                               .height /
+                          //                           70,
+                          //                     ),
+                          //                   )
+                          //                 ],
+                          //               )
+                          //             ],
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //     SizedBox(
+                          //       width: MediaQuery.of(context).size.width / 19,
+                          //     ),
+                          //     GestureDetector(
+                          //       onTap: getInVaddaVillage,
+                          //       child: Container(
+                          //         alignment: Alignment.bottomLeft,
+                          //         height:
+                          //             MediaQuery.of(context).size.height / 2.4,
+                          //         width:
+                          //             MediaQuery.of(context).size.width / 2.5,
+                          //         decoration: BoxDecoration(
+                          //           boxShadow: const [
+                          //             BoxShadow(
+                          //                 color: Color.fromARGB(26, 0, 0, 0),
+                          //                 blurRadius: 20,
+                          //                 spreadRadius: 2),
+                          //           ],
+                          //           image: const DecorationImage(
+                          //               image: NetworkImage(
+                          //                   'https://travelmapsrilanka.com/img/camping/camping-sri-lanka-udawalawe.jpg'),
+                          //               fit: BoxFit.cover),
+                          //           borderRadius: BorderRadius.circular(20.0),
+                          //           color: Colors.red,
+                          //         ),
+                          //         child: Padding(
+                          //           padding: const EdgeInsets.all(8.0),
+                          //           child: Column(
+                          //             mainAxisAlignment: MainAxisAlignment.end,
+                          //             children: <Widget>[
+                          //               Row(
+                          //                 mainAxisAlignment:
+                          //                     MainAxisAlignment.start,
+                          //                 children: <Widget>[
+                          //                   Text(
+                          //                     'Vaddha Village',
+                          //                     style: TextStyle(
+                          //                         color: Colors.white,
+                          //                         fontSize:
+                          //                             MediaQuery.of(context)
+                          //                                     .size
+                          //                                     .height /
+                          //                                 60,
+                          //                         fontWeight: FontWeight.bold),
+                          //                   ),
+                          //                 ],
+                          //               ),
+                          //               Row(
+                          //                 children: <Widget>[
+                          //                   Icon(
+                          //                     Icons.location_on_outlined,
+                          //                     color: Colors.white,
+                          //                   ),
+                          //                   Text(
+                          //                     'Dabana\nEast the city of \nMahiyangana',
+                          //                     style: TextStyle(
+                          //                       color: Colors.white,
+                          //                       fontWeight: FontWeight.normal,
+                          //                       fontSize: MediaQuery.of(context)
+                          //                               .size
+                          //                               .height /
+                          //                           70,
+                          //                     ),
+                          //                   )
+                          //                 ],
+                          //               )
+                          //             ],
+                          //           ),
+                          //         ),
+                          //       ),
+                          //     ),
+                          //   ],
+                          // )
                         ],
                       ),
                     ),
@@ -748,282 +752,232 @@ class yalaindise extends StatefulWidget {
 }
 
 class _yalaindiseState extends State<yalaindise> {
+  servicedata hotel = servicedata();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.bottomLeft,
-                height: 400,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 50.0,
-                      color: Color.fromARGB(71, 0, 0, 0),
-                      spreadRadius: 1,
-                    )
-                  ],
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(50),
-                      bottomRight: Radius.circular(50)),
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://www.worldatlas.com/upload/7f/6c/cf/shutterstock-513139585.jpg'),
-                      fit: BoxFit.cover),
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: IconButton(
-                                onPressed: (() {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (_) {
-                                    return campainPage();
-                                  }));
-                                }),
-                                icon: const Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white,
-                                )),
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 100,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromARGB(92, 255, 255, 255),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Color.fromARGB(75, 255, 255, 255)),
-                                child: IconButton(
-                                  onPressed: yalaImages,
-                                  icon: Icon(
-                                    Icons.photo_library_outlined,
-                                    size: 30,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromARGB(92, 255, 255, 255),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Color.fromARGB(75, 255, 255, 255)),
-                                child: Text(
-                                  '$rating',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: Text(
-                          'Yala National Park',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+        reverse: false,
+        child: Column(
+          children: <Widget>[
+            Container(
+              alignment: Alignment.bottomLeft,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 50.0,
+                    color: Color.fromARGB(71, 0, 0, 0),
+                    spreadRadius: 1,
+                  )
+                ],
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(50),
+                    bottomRight: Radius.circular(50)),
+                image: const DecorationImage(
+                    image: NetworkImage(
+                        'https://www.worldatlas.com/upload/7f/6c/cf/shutterstock-513139585.jpg'),
+                    fit: BoxFit.cover),
               ),
-              SizedBox(
-                height: 50,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
+              child: Column(
+                children: <Widget>[
+                  Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Your Experience',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Color.fromARGB(0, 135, 201, 146)),
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Color.fromARGB(0, 253, 253, 253)),
-                        child: RatingBar.builder(
-                          initialRating: rating,
-                          itemSize: 25,
-                          minRating: 1,
-                          updateOnDrag: true,
-                          onRatingUpdate: (rating) => setState(() {
-                            this.rating = rating;
-                          }),
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: IconButton(
+                              onPressed: (() {
+                                Navigator.of(context)
+                                    .push(MaterialPageRoute(builder: (_) {
+                                  return campainPage();
+                                }));
+                              }),
+                              icon: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Colors.white,
+                              )),
+                          width: 50,
+                          height: 50,
                         ),
                       ),
                     ],
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  child: const Center(
-                    child: Text(
-                      "Yala (යාල) National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area.",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w200),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Color.fromARGB(92, 255, 255, 255),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color.fromARGB(75, 255, 255, 255)),
+                              child: IconButton(
+                                onPressed: yalaImages,
+                                icon: Icon(
+                                  Icons.photo_library_outlined,
+                                  size: 30,
+                                  color: Color.fromARGB(255, 255, 255, 255),
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              alignment: Alignment.center,
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                    color: Color.fromARGB(92, 255, 255, 255),
+                                  ),
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color.fromARGB(75, 255, 255, 255)),
+                              child: Text(
+                                '$rating',
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
                     ),
                   ),
-                ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 25),
+                      child: Text(
+                        'Yala National Park',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  )
+                ],
               ),
-              SizedBox(
-                height: 30,
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Your Experience',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                        border:
+                            Border.all(color: Color.fromARGB(0, 135, 201, 146)),
+                        borderRadius: BorderRadius.circular(30.0),
+                        color: Color.fromARGB(0, 253, 253, 253)),
+                    child: RatingBar.builder(
+                      initialRating: rating,
+                      itemSize: 25,
+                      minRating: 1,
+                      updateOnDrag: true,
+                      onRatingUpdate: (rating) => setState(() {
+                        this.rating = rating;
+                      }),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: Container(
+                child: const Center(
                   child: Text(
-                    "Top Hotels And Resorts",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+                    "Yala (යාල) National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area.",
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                        fontWeight: FontWeight.w200),
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 4,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 1.61,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              alignment: Alignment.centerLeft,
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 25),
+                child: Text(
+                  "Top Hotels And Resorts",
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                 ),
               ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 4,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 1.61,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 4,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height / 8,
-                      width: MediaQuery.of(context).size.width / 1.61,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            FutureBuilder(
+              future: hotel.get(),
+              builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                if (snapshot.hasData) {
+                  print('----->');
+                  print(snapshot.data?.first.name);
+                  List<Hotel> data = snapshot.data!;
+                  print(data.length);
+                  return ListView.builder(
+                    physics: BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    itemCount: data.length,
+                    itemBuilder: ((context, index) {
+                      return InkWell(
+                        child: Column(
+                          children: [
+                            HotelView(hotel: data[index]),
+                            SizedBox(
+                              height: 30,
+                            )
+                          ],
+                        ),
+                      );
+                    }),
+                  );
+                } else {
+                  return CircularProgressIndicator();
+                }
+              }),
+            ),
+          ],
         ),
       ),
     );
@@ -1207,12 +1161,12 @@ class ellainside extends StatefulWidget {
 }
 
 class _ellainsideState extends State<ellainside> {
+  servicedataella hotelella = servicedataella();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Container(
           child: Column(
             children: <Widget>[
@@ -1410,74 +1364,36 @@ class _ellainsideState extends State<ellainside> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
+              FutureBuilder(
+                future: hotelella.get(),
+                builder: ((context, AsyncSnapshot<List<HotelElla>> snapshot) {
+                  if (snapshot.hasData) {
+                    print('----->');
+                    print(snapshot.data?.first.name);
+                    List<HotelElla> data = snapshot.data!;
+                    print(data.length);
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: data.length,
+                      itemBuilder: ((context, index) {
+                        return InkWell(
+                          // onTap: () => bottomSheet(context),
+                          child: Column(
+                            children: [
+                              hotelViewElla(hotelElla: data[index]),
+                              SizedBox(
+                                height: 30,
+                              )
+                            ],
+                          ),
+                        );
+                      }),
+                    );
+                  } else {
+                    return CircularProgressIndicator();
+                  }
+                }),
               ),
             ],
           ),
@@ -1667,6 +1583,7 @@ class belihuloyaInside extends StatefulWidget {
 }
 
 class _belihuloyaInsideState extends State<belihuloyaInside> {
+  servicedatadelihuloya hotel = servicedatadelihuloya();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
@@ -1872,74 +1789,37 @@ class _belihuloyaInsideState extends State<belihuloyaInside> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
+              FutureBuilder(
+                future: hotel.get(),
+                builder:
+                    ((context, AsyncSnapshot<List<HotelBelihuloya>> snapshot) {
+                  if (snapshot.hasData) {
+                    print('----->');
+                    print(snapshot.data?.first.name);
+                    List<HotelBelihuloya> data = snapshot.data!;
+                    print(data.length);
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: data.length,
+                      itemBuilder: ((context, index) {
+                        return InkWell(
+                          // onTap: () => bottomSheet(context),
+                          child: Column(
+                            children: [
+                              hotelViewBelihuloya(hotelBelihuloya: data[index]),
+                              SizedBox(
+                                height: 30,
+                              )
+                            ],
+                          ),
+                        );
+                      }),
+                    );
+                  } else {
+                    return CircularProgressIndicator();
+                  }
+                }),
               ),
             ],
           ),
@@ -2129,6 +2009,7 @@ class knucklesInside extends StatefulWidget {
 }
 
 class _knucklesInsideState extends State<knucklesInside> {
+  servicedata hotel = servicedata();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
@@ -2154,9 +2035,10 @@ class _knucklesInsideState extends State<knucklesInside> {
                       bottomLeft: Radius.circular(50),
                       bottomRight: Radius.circular(50)),
                   image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://www.amayaresorts.com/blog/wp-content/uploads/sites/3/2018/10/Knuckles-Mountain-Range-Sri-Lanka.jpg'),
-                      fit: BoxFit.cover),
+                    image: NetworkImage(
+                        'https://blueelephant.tours/wp-content/uploads/2022/08/Riverstone-way-to-top-1024x768.jpg'),
+                    fit: BoxFit.cover,
+                  ),
                 ),
                 child: Column(
                   children: <Widget>[
@@ -2334,74 +2216,35 @@ class _knucklesInsideState extends State<knucklesInside> {
               SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
+              FutureBuilder(
+                future: hotel.get(),
+                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                  if (snapshot.hasData) {
+                    print('----->');
+                    print(snapshot.data?.first.name);
+                    List<Hotel> data = snapshot.data!;
+                    print(data.length);
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
+                      itemCount: data.length,
+                      itemBuilder: ((context, index) {
+                        return InkWell(
+                          child: Column(
+                            children: [
+                              HotelView(hotel: data[index]),
+                              SizedBox(
+                                height: 30,
+                              )
+                            ],
+                          ),
+                        );
+                      }),
+                    );
+                  } else {
+                    return CircularProgressIndicator();
+                  }
+                }),
               ),
             ],
           ),
@@ -2583,892 +2426,904 @@ class _knucklesInsideState extends State<knucklesInside> {
 
 // ******** sub pages kithulgala *********
 
-class kithulgalaInside extends StatefulWidget {
-  const kithulgalaInside({Key? key}) : super(key: key);
+// class kithulgalaInside extends StatefulWidget {
+//   const kithulgalaInside({Key? key}) : super(key: key);
 
-  @override
-  _kithulgalaInsideState createState() => _kithulgalaInsideState();
-}
+//   @override
+//   _kithulgalaInsideState createState() => _kithulgalaInsideState();
+// }
 
-class _kithulgalaInsideState extends State<kithulgalaInside> {
-  double rating = 0;
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.bottomLeft,
-                height: 400,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 50.0,
-                      color: Color.fromARGB(71, 0, 0, 0),
-                      spreadRadius: 1,
-                    )
-                  ],
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(50),
-                      bottomRight: Radius.circular(50)),
-                  image: const DecorationImage(
-                      image: NetworkImage(
-                          'https://dazzlingtours.com/wp-content/uploads/2016/12/02-2.jpg'),
-                      fit: BoxFit.cover),
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: IconButton(
-                                onPressed: (() {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (_) {
-                                    return campainPage();
-                                  }));
-                                }),
-                                icon: const Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white,
-                                )),
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 100,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Color.fromARGB(92, 255, 255, 255),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(75, 255, 255, 255),
-                                ),
-                                child: IconButton(
-                                  onPressed: kuncklesImages,
-                                  icon: Icon(
-                                    Icons.photo_library_outlined,
-                                    size: 30,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromARGB(92, 255, 255, 255),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Color.fromARGB(75, 255, 255, 255)),
-                                child: Text(
-                                  '$rating',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: Text(
-                          'Kitulgala',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Your Experience',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Color.fromARGB(0, 135, 201, 146)),
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Color.fromARGB(0, 253, 253, 253)),
-                        child: RatingBar.builder(
-                          initialRating: rating,
-                          itemSize: 25,
-                          minRating: 1,
-                          updateOnDrag: true,
-                          onRatingUpdate: (rating) => setState(() {
-                            this.rating = rating;
-                          }),
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  child: const Center(
-                    child: Text(
-                      "Kitulgala is a small town in the west of Sri Lanka.[1] The Academy Award-winning The Bridge on the River Kwai was filmed on the Kelani River near Kitulgala,[2][3] although nothing remains now except the concrete foundations for the bridge. Kitulgala is also a base for white-water rafting,[4] which starts a few kilometres upstream and also popular as a location for adventure based training programs.",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w200),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(
-                    "Top Hotels And Resorts",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  children: <Widget>[
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 10,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                    Container(
-                      height: 100,
-                      width: 278,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20.0),
-                          color: Colors.redAccent),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+// class _kithulgalaInsideState extends State<kithulgalaInside> {
+//   double rating = 0;
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       body: SingleChildScrollView(
+//         scrollDirection: Axis.vertical,
+//         child: Container(
+//           child: Column(
+//             children: <Widget>[
+//               Container(
+//                 alignment: Alignment.bottomLeft,
+//                 height: 400,
+//                 width: double.infinity,
+//                 decoration: BoxDecoration(
+//                   boxShadow: const [
+//                     BoxShadow(
+//                       blurRadius: 50.0,
+//                       color: Color.fromARGB(71, 0, 0, 0),
+//                       spreadRadius: 1,
+//                     )
+//                   ],
+//                   borderRadius: BorderRadius.only(
+//                       bottomLeft: Radius.circular(50),
+//                       bottomRight: Radius.circular(50)),
+//                   image: const DecorationImage(
+//                       image: NetworkImage(
+//                           'https://dazzlingtours.com/wp-content/uploads/2016/12/02-2.jpg'),
+//                       fit: BoxFit.cover),
+//                 ),
+//                 child: Column(
+//                   children: <Widget>[
+//                     Row(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Padding(
+//                           padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
+//                           child: Container(
+//                             alignment: Alignment.center,
+//                             child: IconButton(
+//                                 onPressed: (() {
+//                                   Navigator.of(context)
+//                                       .push(MaterialPageRoute(builder: (_) {
+//                                     return campainPage();
+//                                   }));
+//                                 }),
+//                                 icon: const Icon(
+//                                   Icons.arrow_back_ios,
+//                                   color: Colors.white,
+//                                 )),
+//                             width: 50,
+//                             height: 50,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                     SizedBox(
+//                       height: 100,
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.end,
+//                         children: <Widget>[
+//                           Column(
+//                             children: <Widget>[
+//                               Container(
+//                                 height: 50,
+//                                 width: 50,
+//                                 decoration: BoxDecoration(
+//                                   border: Border.all(
+//                                     color: Color.fromARGB(92, 255, 255, 255),
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(10),
+//                                   color: Color.fromARGB(75, 255, 255, 255),
+//                                 ),
+//                                 child: IconButton(
+//                                   onPressed: kuncklesImages,
+//                                   icon: Icon(
+//                                     Icons.photo_library_outlined,
+//                                     size: 30,
+//                                     color: Color.fromARGB(255, 255, 255, 255),
+//                                   ),
+//                                 ),
+//                               ),
+//                               SizedBox(
+//                                 height: 10,
+//                               ),
+//                               Container(
+//                                 alignment: Alignment.center,
+//                                 height: 50,
+//                                 width: 50,
+//                                 decoration: BoxDecoration(
+//                                     border: Border.all(
+//                                       color: Color.fromARGB(92, 255, 255, 255),
+//                                     ),
+//                                     borderRadius: BorderRadius.circular(10),
+//                                     color: Color.fromARGB(75, 255, 255, 255)),
+//                                 child: Text(
+//                                   '$rating',
+//                                   style: TextStyle(
+//                                       fontSize: 20,
+//                                       fontWeight: FontWeight.bold,
+//                                       color: Colors.white),
+//                                 ),
+//                               ),
+//                             ],
+//                           )
+//                         ],
+//                       ),
+//                     ),
+//                     SizedBox(
+//                       height: 30,
+//                     ),
+//                     Container(
+//                       alignment: Alignment.centerLeft,
+//                       child: Padding(
+//                         padding: const EdgeInsets.symmetric(horizontal: 25),
+//                         child: Text(
+//                           'Kitulgala',
+//                           style: TextStyle(
+//                               color: Colors.white,
+//                               fontSize: 24,
+//                               fontWeight: FontWeight.bold),
+//                         ),
+//                       ),
+//                     )
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 50,
+//               ),
+//               SingleChildScrollView(
+//                 scrollDirection: Axis.vertical,
+//                 child: Padding(
+//                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.start,
+//                     children: <Widget>[
+//                       Text(
+//                         'Your Experience',
+//                         style: TextStyle(
+//                             fontSize: 20, fontWeight: FontWeight.bold),
+//                       ),
+//                       SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         alignment: Alignment.center,
+//                         height: 30,
+//                         width: 150,
+//                         decoration: BoxDecoration(
+//                             border: Border.all(
+//                                 color: Color.fromARGB(0, 135, 201, 146)),
+//                             borderRadius: BorderRadius.circular(30.0),
+//                             color: Color.fromARGB(0, 253, 253, 253)),
+//                         child: RatingBar.builder(
+//                           initialRating: rating,
+//                           itemSize: 25,
+//                           minRating: 1,
+//                           updateOnDrag: true,
+//                           onRatingUpdate: (rating) => setState(() {
+//                             this.rating = rating;
+//                           }),
+//                           itemBuilder: (context, _) => const Icon(
+//                             Icons.star,
+//                             color: Colors.amber,
+//                           ),
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 30,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 25),
+//                 child: Container(
+//                   child: const Center(
+//                     child: Text(
+//                       "Kitulgala is a small town in the west of Sri Lanka.[1] The Academy Award-winning The Bridge on the River Kwai was filmed on the Kelani River near Kitulgala,[2][3] although nothing remains now except the concrete foundations for the bridge. Kitulgala is also a base for white-water rafting,[4] which starts a few kilometres upstream and also popular as a location for adventure based training programs.",
+//                       style: TextStyle(
+//                           color: Color.fromARGB(255, 0, 0, 0),
+//                           fontWeight: FontWeight.w200),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 30,
+//               ),
+//               Container(
+//                 alignment: Alignment.centerLeft,
+//                 child: const Padding(
+//                   padding: EdgeInsets.symmetric(horizontal: 25),
+//                   child: Text(
+//                     "Top Hotels And Resorts",
+//                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 20,
+//               ),
+//               Padding(
+//                 padding: EdgeInsets.symmetric(horizontal: 25.0),
+//                 child: Row(
+//                   children: <Widget>[
+//                     Container(
+//                       height: 100,
+//                       width: 100,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                     Container(
+//                       height: 100,
+//                       width: 278,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 10,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 25),
+//                 child: Row(
+//                   children: [
+//                     Container(
+//                       height: 100,
+//                       width: 100,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                     Container(
+//                       height: 100,
+//                       width: 278,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 10,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 25),
+//                 child: Row(
+//                   children: [
+//                     Container(
+//                       height: 100,
+//                       width: 100,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                     Container(
+//                       height: 100,
+//                       width: 278,
+//                       decoration: BoxDecoration(
+//                           borderRadius: BorderRadius.circular(20.0),
+//                           color: Colors.redAccent),
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
 
-  void kuncklesImages() {
-    showSlidingBottomSheet(
-      context,
-      builder: ((context) {
-        return SlidingSheetDialog(
-          elevation: 8,
-          avoidStatusBar: false,
-          dismissOnBackdropTap: true,
-          cornerRadius: 40,
-          color: Color.fromARGB(255, 255, 255, 255),
-          snapSpec: const SnapSpec(
-            snap: true,
-            snappings: [0.4, 0.7, 0.7],
-            positioning: SnapPositioning.relativeToAvailableSpace,
-          ),
-          builder: (context, state) {
-            return Padding(
-              padding: EdgeInsets.all(8),
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    DefaultTextStyle(
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                      child: Text('Images'),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.srilankatravelandtourism.com/places-sri-lanka/kitulgala/kitulgala-images/kitulgala-10-sri-lanka.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://img.traveltriangle.com/blog/wp-content/uploads/2019/09/Places-to-visit-in-Kitulgala-for-leisure.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://youimg1.tripcdn.com/target/0ww1u120008ygxh4a0F36_C_640_320_R5_Q70.jpg_.webp'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://luxeasia.lk/wp-content/uploads/2018/07/kitulgala-1001-visually-similar-location-.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.reddottours.com/uploads/Activities/Kitulgala-Kelani-Forest-Reserve/Kitulgala-Kelani-Forest-Reserve-header.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.jetwingeco.com/wp-content/uploads/2016/06/Kithulgala-YE0M8177-2009-01-24.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.srilankaecotourism.lk/location_img/1489656751kitulgala_4.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://lankatourexperience.com/wp-content/uploads/2020/03/Kitulgala-Sri-lanka.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        );
-      }),
-    );
-  }
-}
+//   void kuncklesImages() {
+//     showSlidingBottomSheet(
+//       context,
+//       builder: ((context) {
+//         return SlidingSheetDialog(
+//           elevation: 8,
+//           avoidStatusBar: false,
+//           dismissOnBackdropTap: true,
+//           cornerRadius: 40,
+//           color: Color.fromARGB(255, 255, 255, 255),
+//           snapSpec: const SnapSpec(
+//             snap: true,
+//             snappings: [0.4, 0.7, 0.7],
+//             positioning: SnapPositioning.relativeToAvailableSpace,
+//           ),
+//           builder: (context, state) {
+//             return Padding(
+//               padding: EdgeInsets.all(8),
+//               child: Center(
+//                 child: Column(
+//                   children: <Widget>[
+//                     DefaultTextStyle(
+//                       style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 20,
+//                           fontWeight: FontWeight.bold),
+//                       child: Text('Images'),
+//                     ),
+//                     SizedBox(
+//                       height: 10,
+//                     ),
+//                     Row(
+//                       children: <Widget>[
+//                         Column(
+//                           children: <Widget>[
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: const DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.srilankatravelandtourism.com/places-sri-lanka/kitulgala/kitulgala-images/kitulgala-10-sri-lanka.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://img.traveltriangle.com/blog/wp-content/uploads/2019/09/Places-to-visit-in-Kitulgala-for-leisure.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://youimg1.tripcdn.com/target/0ww1u120008ygxh4a0F36_C_640_320_R5_Q70.jpg_.webp'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://luxeasia.lk/wp-content/uploads/2018/07/kitulgala-1001-visually-similar-location-.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                         SizedBox(
+//                           width: 10,
+//                         ),
+//                         Column(
+//                           children: <Widget>[
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.reddottours.com/uploads/Activities/Kitulgala-Kelani-Forest-Reserve/Kitulgala-Kelani-Forest-Reserve-header.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.jetwingeco.com/wp-content/uploads/2016/06/Kithulgala-YE0M8177-2009-01-24.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.srilankaecotourism.lk/location_img/1489656751kitulgala_4.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://lankatourexperience.com/wp-content/uploads/2020/03/Kitulgala-Sri-lanka.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                       ],
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             );
+//           },
+//         );
+//       }),
+//     );
+//   }
+// }
 
 // ******** sub pages vadda village **********
 
-class vaddaVilageinside extends StatefulWidget {
-  const vaddaVilageinside({Key? key}) : super(key: key);
+// class vaddaVilageinside extends StatefulWidget {
+//   const vaddaVilageinside({Key? key}) : super(key: key);
 
-  @override
-  _vaddaVilageinsideState createState() => _vaddaVilageinsideState();
-}
+//   @override
+//   _vaddaVilageinsideState createState() => _vaddaVilageinsideState();
+// }
 
-class _vaddaVilageinsideState extends State<vaddaVilageinside> {
-  servicedata hotel = servicedata();
-  double rating = 0;
-  @override
-  Widget build(BuildContext context) {
-    print("length......");
-    print(hotel.hotel.length);
-    return Scaffold(
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Container(
-          child: Column(
-            children: <Widget>[
-              Container(
-                alignment: Alignment.bottomLeft,
-                height: 400,
-                width: double.infinity,
-                decoration: BoxDecoration(
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 50.0,
-                      color: Color.fromARGB(71, 0, 0, 0),
-                      spreadRadius: 1,
-                    )
-                  ],
-                  borderRadius: BorderRadius.only(
-                      bottomLeft: Radius.circular(50),
-                      bottomRight: Radius.circular(50)),
-                  image: DecorationImage(
-                      onError: (exception, stackTrace) {
-                        throw ArgumentError.value(exception);
-                      },
-                      image: NetworkImage(
-                          'https://media.istockphoto.com/photos/vedda-people-sri-lanka-picture-id117148259?k=20&m=117148259&s=612x612&w=0&h=AHELaP2MZ9YuxoGB6LdjLGAE5exniQg5Rhmw3xM2TYw='),
-                      fit: BoxFit.cover),
-                ),
-                child: Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: IconButton(
-                                onPressed: (() {
-                                  Navigator.of(context)
-                                      .push(MaterialPageRoute(builder: (_) {
-                                    return campainPage();
-                                  }));
-                                }),
-                                icon: const Icon(
-                                  Icons.arrow_back_ios,
-                                  color: Colors.white,
-                                )),
-                            width: 50,
-                            height: 50,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 100,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: <Widget>[
-                          Column(
-                            children: <Widget>[
-                              Container(
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Color.fromARGB(92, 255, 255, 255),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(75, 255, 255, 255),
-                                ),
-                                child: IconButton(
-                                  onPressed: kuncklesImages,
-                                  icon: Icon(
-                                    Icons.photo_library_outlined,
-                                    size: 30,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                  ),
-                                ),
-                              ),
-                              SizedBox(
-                                height: 10,
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 50,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                      color: Color.fromARGB(92, 255, 255, 255),
-                                    ),
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Color.fromARGB(75, 255, 255, 255)),
-                                child: Text(
-                                  '$rating',
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Colors.white),
-                                ),
-                              ),
-                            ],
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Container(
-                      alignment: Alignment.centerLeft,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: Text(
-                          'Vadda Village',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 50,
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        'Your Experience',
-                        style: TextStyle(
-                            fontSize: 20, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 30,
-                        width: 150,
-                        decoration: BoxDecoration(
-                            border: Border.all(
-                                color: Color.fromARGB(0, 135, 201, 146)),
-                            borderRadius: BorderRadius.circular(30.0),
-                            color: Color.fromARGB(0, 253, 253, 253)),
-                        child: RatingBar.builder(
-                          initialRating: rating,
-                          itemSize: 25,
-                          minRating: 1,
-                          updateOnDrag: true,
-                          onRatingUpdate: (rating) => setState(() {
-                            this.rating = rating;
-                          }),
-                          itemBuilder: (context, _) => const Icon(
-                            Icons.star,
-                            color: Colors.amber,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  child: const Center(
-                    child: Text(
-                      "The Vedda (Sinhala: වැද්දා [ˈvædːaː], Tamil: வேடர் (Vēḍar)), or Wanniyalaeto,[4] are a minority indigenous group of people in Sri Lanka who, among other sub-communities such as Coast Veddas, Anuradhapura Veddas and Bintenne Veddas,[5] are accorded indigenous status. The Vedda minority in Sri Lanka may become completely assimilated.[6] Most speak Sinhala instead of their indigenous languages, which are nearing extinction. It has been hypothesized that the Vedda were probably the earliest inhabitants of Sri Lanka and have lived on the island since before the arrival of other ethnic groups in India.[7][8]Veddas are also mentioned in Robert Knox's history of his captivity by the King of Kandy in the 17th century. Knox described them as 'wild men', but also said there was a 'tamer sort', and that the latter sometimes served in the king's army.[9]The Ratnapura District, which is part of the Sabaragamuwa Province, is known to have been inhabited by the Veddas in the distant past. This has been shown by scholars like Nandadeva Wijesekera. The very name Sabaragamuwa is believed to have meant the village of the Sabaras or 'forest barbarians'. Place-names such as Vedda-gala (Vedda Rock), Vedda-ela (Vedda Canal) and Vedi-Kanda (Vedda Mountain) in the Ratnapura District also bear testimony to this. As Wijesekera observes, a strong Vedda element is discernible in the population of Vedda-gala and its environs.",
-                      style: TextStyle(
-                          color: Color.fromARGB(255, 0, 0, 0),
-                          fontWeight: FontWeight.w200),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              Container(
-                alignment: Alignment.centerLeft,
-                child: const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 25),
-                  child: Text(
-                    "Top Hotels And Resorts",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                  ),
-                ),
-              ),
-              FutureBuilder(
-                future: hotel.get(),
-                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
-                  if (snapshot.hasData) {
-                    print('----->');
-                    print(snapshot.data?.first.hotelName);
-                    List<Hotel> data = snapshot.data!;
-                    print(data.length);
-                    return ListView.builder(
-                        shrinkWrap: true,
-                        itemCount: data.length,
-                        itemBuilder: ((context, index) {
-                          return InkWell(
-                              onTap: () => bottomSheet(context),
-                              child: HotelView(hotel: data[index]));
-                        }));
-                  } else {
-                    return CircularProgressIndicator();
-                  }
-                }),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
+// class _vaddaVilageinsideState extends State<vaddaVilageinside> {
+//   servicedata hotel = servicedata();
+//   double rating = 0;
+//   @override
+//   Widget build(BuildContext context) {
+//     print("length......");
+//     print(hotel.hotel.length);
+//     return Scaffold(
+//       body: SingleChildScrollView(
+//         scrollDirection: Axis.vertical,
+//         child: Container(
+//           child: Column(
+//             children: <Widget>[
+//               Container(
+//                 alignment: Alignment.bottomLeft,
+//                 height: 400,
+//                 width: double.infinity,
+//                 decoration: BoxDecoration(
+//                   boxShadow: const [
+//                     BoxShadow(
+//                       blurRadius: 50.0,
+//                       color: Color.fromARGB(71, 0, 0, 0),
+//                       spreadRadius: 1,
+//                     )
+//                   ],
+//                   borderRadius: BorderRadius.only(
+//                       bottomLeft: Radius.circular(50),
+//                       bottomRight: Radius.circular(50)),
+//                   image: DecorationImage(
+//                       onError: (exception, stackTrace) {
+//                         throw ArgumentError.value(exception);
+//                       },
+//                       image: NetworkImage(
+//                           'https://media.istockphoto.com/photos/vedda-people-sri-lanka-picture-id117148259?k=20&m=117148259&s=612x612&w=0&h=AHELaP2MZ9YuxoGB6LdjLGAE5exniQg5Rhmw3xM2TYw='),
+//                       fit: BoxFit.cover),
+//                 ),
+//                 child: Column(
+//                   children: <Widget>[
+//                     Row(
+//                       mainAxisAlignment: MainAxisAlignment.start,
+//                       children: [
+//                         Padding(
+//                           padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
+//                           child: Container(
+//                             alignment: Alignment.center,
+//                             child: IconButton(
+//                                 onPressed: (() {
+//                                   Navigator.of(context)
+//                                       .push(MaterialPageRoute(builder: (_) {
+//                                     return campainPage();
+//                                   }));
+//                                 }),
+//                                 icon: const Icon(
+//                                   Icons.arrow_back_ios,
+//                                   color: Colors.white,
+//                                 )),
+//                             width: 50,
+//                             height: 50,
+//                           ),
+//                         ),
+//                       ],
+//                     ),
+//                     SizedBox(
+//                       height: 100,
+//                     ),
+//                     Padding(
+//                       padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
+//                       child: Row(
+//                         mainAxisAlignment: MainAxisAlignment.end,
+//                         children: <Widget>[
+//                           Column(
+//                             children: <Widget>[
+//                               Container(
+//                                 height: 50,
+//                                 width: 50,
+//                                 decoration: BoxDecoration(
+//                                   border: Border.all(
+//                                     color: Color.fromARGB(92, 255, 255, 255),
+//                                   ),
+//                                   borderRadius: BorderRadius.circular(10),
+//                                   color: Color.fromARGB(75, 255, 255, 255),
+//                                 ),
+//                                 child: IconButton(
+//                                   onPressed: kuncklesImages,
+//                                   icon: Icon(
+//                                     Icons.photo_library_outlined,
+//                                     size: 30,
+//                                     color: Color.fromARGB(255, 255, 255, 255),
+//                                   ),
+//                                 ),
+//                               ),
+//                               SizedBox(
+//                                 height: 10,
+//                               ),
+//                               Container(
+//                                 alignment: Alignment.center,
+//                                 height: 50,
+//                                 width: 50,
+//                                 decoration: BoxDecoration(
+//                                     border: Border.all(
+//                                       color: Color.fromARGB(92, 255, 255, 255),
+//                                     ),
+//                                     borderRadius: BorderRadius.circular(10),
+//                                     color: Color.fromARGB(75, 255, 255, 255)),
+//                                 child: Text(
+//                                   '$rating',
+//                                   style: TextStyle(
+//                                       fontSize: 20,
+//                                       fontWeight: FontWeight.bold,
+//                                       color: Colors.white),
+//                                 ),
+//                               ),
+//                             ],
+//                           )
+//                         ],
+//                       ),
+//                     ),
+//                     SizedBox(
+//                       height: 30,
+//                     ),
+//                     Container(
+//                       alignment: Alignment.centerLeft,
+//                       child: Padding(
+//                         padding: const EdgeInsets.symmetric(horizontal: 25),
+//                         child: Text(
+//                           'Vadda Village',
+//                           style: TextStyle(
+//                               color: Colors.white,
+//                               fontSize: 24,
+//                               fontWeight: FontWeight.bold),
+//                         ),
+//                       ),
+//                     )
+//                   ],
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 50,
+//               ),
+//               SingleChildScrollView(
+//                 scrollDirection: Axis.vertical,
+//                 child: Padding(
+//                   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+//                   child: Row(
+//                     mainAxisAlignment: MainAxisAlignment.start,
+//                     children: <Widget>[
+//                       Text(
+//                         'Your Experience',
+//                         style: TextStyle(
+//                             fontSize: 20, fontWeight: FontWeight.bold),
+//                       ),
+//                       SizedBox(
+//                         width: 10,
+//                       ),
+//                       Container(
+//                         alignment: Alignment.center,
+//                         height: 30,
+//                         width: 150,
+//                         decoration: BoxDecoration(
+//                             border: Border.all(
+//                                 color: Color.fromARGB(0, 135, 201, 146)),
+//                             borderRadius: BorderRadius.circular(30.0),
+//                             color: Color.fromARGB(0, 253, 253, 253)),
+//                         child: RatingBar.builder(
+//                           initialRating: rating,
+//                           itemSize: 25,
+//                           minRating: 1,
+//                           updateOnDrag: true,
+//                           onRatingUpdate: (rating) => setState(() {
+//                             this.rating = rating;
+//                           }),
+//                           itemBuilder: (context, _) => const Icon(
+//                             Icons.star,
+//                             color: Colors.amber,
+//                           ),
+//                         ),
+//                       ),
+//                     ],
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 30,
+//               ),
+//               Padding(
+//                 padding: const EdgeInsets.symmetric(horizontal: 25),
+//                 child: Container(
+//                   child: const Center(
+//                     child: Text(
+//                       "The Vedda (Sinhala: වැද්දා [ˈvædːaː], Tamil: வேடர் (Vēḍar)), or Wanniyalaeto,[4] are a minority indigenous group of people in Sri Lanka who, among other sub-communities such as Coast Veddas, Anuradhapura Veddas and Bintenne Veddas,[5] are accorded indigenous status. The Vedda minority in Sri Lanka may become completely assimilated.[6] Most speak Sinhala instead of their indigenous languages, which are nearing extinction. It has been hypothesized that the Vedda were probably the earliest inhabitants of Sri Lanka and have lived on the island since before the arrival of other ethnic groups in India.[7][8]Veddas are also mentioned in Robert Knox's history of his captivity by the King of Kandy in the 17th century. Knox described them as 'wild men', but also said there was a 'tamer sort', and that the latter sometimes served in the king's army.[9]The Ratnapura District, which is part of the Sabaragamuwa Province, is known to have been inhabited by the Veddas in the distant past. This has been shown by scholars like Nandadeva Wijesekera. The very name Sabaragamuwa is believed to have meant the village of the Sabaras or 'forest barbarians'. Place-names such as Vedda-gala (Vedda Rock), Vedda-ela (Vedda Canal) and Vedi-Kanda (Vedda Mountain) in the Ratnapura District also bear testimony to this. As Wijesekera observes, a strong Vedda element is discernible in the population of Vedda-gala and its environs.",
+//                       style: TextStyle(
+//                           color: Color.fromARGB(255, 0, 0, 0),
+//                           fontWeight: FontWeight.w200),
+//                     ),
+//                   ),
+//                 ),
+//               ),
+//               SizedBox(
+//                 height: 30,
+//               ),
+//               Container(
+//                 alignment: Alignment.centerLeft,
+//                 child: const Padding(
+//                   padding: EdgeInsets.symmetric(horizontal: 25),
+//                   child: Text(
+//                     "Top Hotels And Resorts",
+//                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
+//                   ),
+//                 ),
+//               ),
+//               FutureBuilder(
+//                 future: hotel.get(),
+//                 builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+//                   if (snapshot.hasData) {
+//                     print('----->');
+//                     print(snapshot.data?.first.name);
+//                     List<Hotel> data = snapshot.data!;
+//                     print(data.length);
+//                     return ListView.builder(
+//                       shrinkWrap: true,
+//                       itemCount: data.length,
+//                       itemBuilder: ((context, index) {
+//                         return InkWell(
+//                           onTap: () => bottomSheet(context),
+//                           child: Column(
+//                             children: [
+//                               HotelView(hotel: data[index]),
+//                               SizedBox(
+//                                 height: 30,
+//                               )
+//                             ],
+//                           ),
+//                         );
+//                       }),
+//                     );
+//                   } else {
+//                     return CircularProgressIndicator();
+//                   }
+//                 }),
+//               ),
+//               SizedBox(
+//                 height: 10,
+//               )
+//             ],
+//           ),
+//         ),
+//       ),
+//     );
+//   }
 
-  void bottomSheet(BuildContext context) {
-    showCupertinoModalPopup(
-        context: context,
-        builder: ((context) {
-          return Container(
-            height: 200,
-            color: Colors.amber,
-          );
-        }));
-  }
+//   void bottomSheet(BuildContext context) {
+//     showCupertinoModalPopup(
+//         context: context,
+//         builder: ((context) {
+//           return Container(
+//             height: 200,
+//             color: Colors.amber,
+//           );
+//         }));
+//   }
 
-  void kuncklesImages() {
-    showSlidingBottomSheet(
-      context,
-      builder: ((context) {
-        return SlidingSheetDialog(
-          elevation: 8,
-          avoidStatusBar: false,
-          dismissOnBackdropTap: true,
-          cornerRadius: 40,
-          color: Color.fromARGB(113, 255, 255, 255),
-          snapSpec: const SnapSpec(
-            snap: true,
-            snappings: [0.4, 0.7, 0.7],
-            positioning: SnapPositioning.relativeToAvailableSpace,
-          ),
-          builder: (context, state) {
-            return Padding(
-              padding: EdgeInsets.all(8),
-              child: Center(
-                child: Column(
-                  children: <Widget>[
-                    DefaultTextStyle(
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold),
-                      child: Text('Images'),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                        'https://img.trvcdn.net/https://media.tacdn.com/media/attractions-splice-spp-720x480/0b/29/a8/a7.jpg?imgeng=m_box/w_1418/h_946'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'http://www.funholidays.lk/blog/wp-content/uploads/2016/12/wadda.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.bestoflanka.com/images/best-things-to-do-in-sri-lanka/visit-vaddas-sri-lanka/03.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.bestoflanka.com/images/visit-vaddas-sri-lanka-1.jpg?q=79&w=800&h=571'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          width: 10,
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://www.malteclavin.com/wp-content/uploads/2021/07/24-vedda.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://lanka-houses.com/media/sights/photo/41.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://cmb.ac.lk/wp-content/uploads/establishment-new-community-centres-cshr.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10.0,
-                            ),
-                            Container(
-                              height: 200,
-                              width: 200,
-                              decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        'https://img.theculturetrip.com/wp-content/uploads/2018/01/7h9a2585-copy.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(30),
-                                color: Colors.red,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        );
-      }),
-    );
-  }
-}
+//   void kuncklesImages() {
+//     showSlidingBottomSheet(
+//       context,
+//       builder: ((context) {
+//         return SlidingSheetDialog(
+//           elevation: 8,
+//           avoidStatusBar: false,
+//           dismissOnBackdropTap: true,
+//           cornerRadius: 40,
+//           color: Color.fromARGB(113, 255, 255, 255),
+//           snapSpec: const SnapSpec(
+//             snap: true,
+//             snappings: [0.4, 0.7, 0.7],
+//             positioning: SnapPositioning.relativeToAvailableSpace,
+//           ),
+//           builder: (context, state) {
+//             return Padding(
+//               padding: EdgeInsets.all(8),
+//               child: Center(
+//                 child: Column(
+//                   children: <Widget>[
+//                     DefaultTextStyle(
+//                       style: TextStyle(
+//                           color: Colors.black,
+//                           fontSize: 20,
+//                           fontWeight: FontWeight.bold),
+//                       child: Text('Images'),
+//                     ),
+//                     SizedBox(
+//                       height: 10,
+//                     ),
+//                     Row(
+//                       children: <Widget>[
+//                         Column(
+//                           children: <Widget>[
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: const DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://img.trvcdn.net/https://media.tacdn.com/media/attractions-splice-spp-720x480/0b/29/a8/a7.jpg?imgeng=m_box/w_1418/h_946'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'http://www.funholidays.lk/blog/wp-content/uploads/2016/12/wadda.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.bestoflanka.com/images/best-things-to-do-in-sri-lanka/visit-vaddas-sri-lanka/03.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.bestoflanka.com/images/visit-vaddas-sri-lanka-1.jpg?q=79&w=800&h=571'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                         SizedBox(
+//                           width: 10,
+//                         ),
+//                         Column(
+//                           children: <Widget>[
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://www.malteclavin.com/wp-content/uploads/2021/07/24-vedda.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://lanka-houses.com/media/sights/photo/41.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://cmb.ac.lk/wp-content/uploads/establishment-new-community-centres-cshr.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                             SizedBox(
+//                               height: 10.0,
+//                             ),
+//                             Container(
+//                               height: 200,
+//                               width: 200,
+//                               decoration: BoxDecoration(
+//                                 image: DecorationImage(
+//                                     image: NetworkImage(
+//                                         'https://img.theculturetrip.com/wp-content/uploads/2018/01/7h9a2585-copy.jpg'),
+//                                     fit: BoxFit.cover),
+//                                 borderRadius: BorderRadius.circular(30),
+//                                 color: Colors.red,
+//                               ),
+//                             ),
+//                           ],
+//                         ),
+//                       ],
+//                     ),
+//                   ],
+//                 ),
+//               ),
+//             );
+//           },
+//         );
+//       }),
+//     );
+//   }
+// }

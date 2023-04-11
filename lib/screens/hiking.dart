@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/internetConnectionChecker.dart';
+import 'package:flutter_application_1/widget/container/hotel_view.dart';
 
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+
+import 'bottomappbar.dart';
 
 class hikingPage extends StatefulWidget {
   const hikingPage({Key? key}) : super(key: key);
@@ -23,6 +27,15 @@ class _hikingPageState extends State<hikingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (_) {
+                  return appbar();
+                }),
+              );
+            },
+            icon: Icon(Icons.arrow_back_ios)),
         actions: [
           IconButton(
             color: const Color.fromARGB(255, 255, 0, 179),
@@ -238,8 +251,9 @@ class _hikingPageState extends State<hikingPage> {
                             GestureDetector(
                               onTap: adamspeakinside,
                               child: Container(
-                                height: 220,
-                                width: 180,
+                                height:
+                                    MediaQuery.of(context).size.height / 3.2,
+                                width: MediaQuery.of(context).size.width / 2.5,
                                 decoration: BoxDecoration(
                                   boxShadow: const [
                                     BoxShadow(
@@ -286,12 +300,12 @@ class _hikingPageState extends State<hikingPage> {
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              width: 10,
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 19,
                             ),
                             Container(
-                              height: 280,
-                              width: 180,
+                              height: MediaQuery.of(context).size.height / 2.4,
+                              width: MediaQuery.of(context).size.width / 2.5,
                               decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -345,12 +359,16 @@ class _hikingPageState extends State<hikingPage> {
                             ),
                           ],
                         ),
+                        SizedBox(
+                          height: MediaQuery.of(context).size.height / 29,
+                        ),
+
                         Row(
                           children: <Widget>[
                             Container(
                               alignment: Alignment.bottomLeft,
-                              height: 280,
-                              width: 180,
+                              height: MediaQuery.of(context).size.height / 2.4,
+                              width: MediaQuery.of(context).size.width / 2.5,
                               decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -402,13 +420,13 @@ class _hikingPageState extends State<hikingPage> {
                                 ),
                               ),
                             ),
-                            const SizedBox(
-                              width: 10.0,
+                            SizedBox(
+                              width: MediaQuery.of(context).size.width / 19,
                             ),
                             Container(
                               alignment: Alignment.bottomLeft,
-                              height: 220,
-                              width: 180,
+                              height: MediaQuery.of(context).size.height / 3.2,
+                              width: MediaQuery.of(context).size.width / 2.5,
                               decoration: BoxDecoration(
                                 boxShadow: const [
                                   BoxShadow(
@@ -461,121 +479,121 @@ class _hikingPageState extends State<hikingPage> {
                             ),
                           ],
                         ),
-                        Row(
-                          children: <Widget>[
-                            Container(
-                              alignment: Alignment.bottomLeft,
-                              height: 220,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Color.fromARGB(26, 0, 0, 0),
-                                      blurRadius: 20,
-                                      spreadRadius: 2),
-                                ],
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                        'https://t4.ftcdn.net/jpg/03/73/03/95/360_F_373039561_3Yl2WwLiO8NcDEMKhLfPL28esizcQiQK.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.red,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Hanthana Mountain \nRange',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: const <Widget>[
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        Text(
-                                          'south-west\ncity of Kandy.',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                            const SizedBox(
-                              width: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.bottomLeft,
-                              height: 280,
-                              width: 180,
-                              decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Color.fromARGB(26, 0, 0, 0),
-                                      blurRadius: 20,
-                                      spreadRadius: 2),
-                                ],
-                                image: const DecorationImage(
-                                    image: const NetworkImage(
-                                        'https://www.srilankaecotourism.lk/location_img/15196276093.jpg'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.red,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Meemure',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: const <Widget>[
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        Text(
-                                          'Meemure \nWana Arana \n15/C, \nUdawanatha, \nMeemure, \nSri Lanka',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
-                                    )
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
+                        // Row(
+                        //   children: <Widget>[
+                        //     Container(
+                        //       alignment: Alignment.bottomLeft,
+                        //       height: 220,
+                        //       width: 180,
+                        //       decoration: BoxDecoration(
+                        //         boxShadow: const [
+                        //           BoxShadow(
+                        //               color: Color.fromARGB(26, 0, 0, 0),
+                        //               blurRadius: 20,
+                        //               spreadRadius: 2),
+                        //         ],
+                        //         image: const DecorationImage(
+                        //             image: NetworkImage(
+                        //                 'https://t4.ftcdn.net/jpg/03/73/03/95/360_F_373039561_3Yl2WwLiO8NcDEMKhLfPL28esizcQiQK.jpg'),
+                        //             fit: BoxFit.cover),
+                        //         borderRadius: BorderRadius.circular(20.0),
+                        //         color: Colors.red,
+                        //       ),
+                        //       child: Padding(
+                        //         padding: const EdgeInsets.all(8.0),
+                        //         child: Column(
+                        //           mainAxisAlignment: MainAxisAlignment.end,
+                        //           children: <Widget>[
+                        //             Row(
+                        //               mainAxisAlignment:
+                        //                   MainAxisAlignment.start,
+                        //               children: const <Widget>[
+                        //                 Text(
+                        //                   'Hanthana Mountain \nRange',
+                        //                   style: TextStyle(
+                        //                       color: Colors.white,
+                        //                       fontSize: 15,
+                        //                       fontWeight: FontWeight.bold),
+                        //                 ),
+                        //               ],
+                        //             ),
+                        //             Row(
+                        //               children: const <Widget>[
+                        //                 Icon(
+                        //                   Icons.location_on_outlined,
+                        //                   color: Colors.white,
+                        //                 ),
+                        //                 Text(
+                        //                   'south-west\ncity of Kandy.',
+                        //                   style: TextStyle(
+                        //                       color: Colors.white,
+                        //                       fontWeight: FontWeight.normal),
+                        //                 )
+                        //               ],
+                        //             )
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ),
+                        //     const SizedBox(
+                        //       width: 10,
+                        //     ),
+                        //     Container(
+                        //       alignment: Alignment.bottomLeft,
+                        //       height: MediaQuery.of(context).size.height / 3.2,
+                        //       width: MediaQuery.of(context).size.width / 2.5,
+                        //       decoration: BoxDecoration(
+                        //         boxShadow: const [
+                        //           BoxShadow(
+                        //               color: Color.fromARGB(26, 0, 0, 0),
+                        //               blurRadius: 20,
+                        //               spreadRadius: 2),
+                        //         ],
+                        //         image: const DecorationImage(
+                        //             image: const NetworkImage(
+                        //                 'https://www.srilankaecotourism.lk/location_img/15196276093.jpg'),
+                        //             fit: BoxFit.cover),
+                        //         borderRadius: BorderRadius.circular(20.0),
+                        //         color: Colors.red,
+                        //       ),
+                        //       child: Padding(
+                        //         padding: const EdgeInsets.all(8.0),
+                        //         child: Column(
+                        //           mainAxisAlignment: MainAxisAlignment.end,
+                        //           children: <Widget>[
+                        //             Row(
+                        //               mainAxisAlignment:
+                        //                   MainAxisAlignment.start,
+                        //               children: const <Widget>[
+                        //                 Text(
+                        //                   'Meemure',
+                        //                   style: TextStyle(
+                        //                       color: Colors.white,
+                        //                       fontSize: 15,
+                        //                       fontWeight: FontWeight.bold),
+                        //                 ),
+                        //               ],
+                        //             ),
+                        //             Row(
+                        //               children: const <Widget>[
+                        //                 Icon(
+                        //                   Icons.location_on_outlined,
+                        //                   color: Colors.white,
+                        //                 ),
+                        //                 Text(
+                        //                   'Meemure \nWana Arana \n15/C, \nUdawanatha, \nMeemure, \nSri Lanka',
+                        //                   style: TextStyle(
+                        //                       color: Colors.white,
+                        //                       fontWeight: FontWeight.normal),
+                        //                 )
+                        //               ],
+                        //             )
+                        //           ],
+                        //         ),
+                        //       ),
+                        //     ),
+                        //   ],
+                        // )
                       ],
                     ),
                   ),
@@ -597,282 +615,245 @@ class adamsPeak extends StatefulWidget {
 class _adamsPeakState extends State<adamsPeak> {
   @override
   double rating = 0;
+  servicedata hotel = servicedata();
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
-          children: <Widget>[
-            Container(
-              alignment: Alignment.bottomLeft,
-              height: 400,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                boxShadow: const [
-                  BoxShadow(
-                    blurRadius: 50.0,
-                    color: Color.fromARGB(71, 0, 0, 0),
-                    spreadRadius: 1,
-                  )
-                ],
-                borderRadius: BorderRadius.circular(50),
-                image: const DecorationImage(
-                    image: NetworkImage(
-                        'https://www.kkcollection.com/wp-content/uploads/2021/03/yala-header-tab-5.jpg'),
-                    fit: BoxFit.cover),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Container(
+          child: Column(
+            children: <Widget>[
+              Container(
+                alignment: Alignment.bottomLeft,
+                height: 400,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(
+                      blurRadius: 50.0,
+                      color: Color.fromARGB(71, 0, 0, 0),
+                      spreadRadius: 1,
+                    )
+                  ],
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(50),
+                      bottomRight: Radius.circular(50)),
+                  image: const DecorationImage(
+                      image: NetworkImage(
+                          'https://bestofceylon.com/images/ella/trek-to-little-adams-peak/trek-to-little-adams-peak1.jpg'),
+                      fit: BoxFit.cover),
+                ),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                                onPressed: (() {
+                                  Navigator.of(context)
+                                      .push(MaterialPageRoute(builder: (_) {
+                                    return hikingPage();
+                                  }));
+                                }),
+                                icon: const Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Colors.white,
+                                )),
+                            width: 50,
+                            height: 50,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 100,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Container(
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color.fromARGB(92, 255, 255, 255),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Color.fromARGB(75, 255, 255, 255)),
+                                child: IconButton(
+                                  onPressed: yalaImages,
+                                  icon: Icon(
+                                    Icons.photo_library_outlined,
+                                    size: 30,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                alignment: Alignment.center,
+                                height: 50,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                    border: Border.all(
+                                      color: Color.fromARGB(92, 255, 255, 255),
+                                    ),
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Color.fromARGB(75, 255, 255, 255)),
+                                child: Text(
+                                  '$rating',
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.white),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 30,
+                    ),
+                    Container(
+                      alignment: Alignment.centerLeft,
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Text(
+                          "Adam's Peek",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ),
-              child: Column(
-                children: <Widget>[
-                  Row(
+              SizedBox(
+                height: 50,
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(1, 45, 0, 0),
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: IconButton(
-                              onPressed: (() {
-                                Navigator.of(context)
-                                    .push(MaterialPageRoute(builder: (_) {
-                                  return hikingPage();
-                                }));
-                              }),
-                              icon: const Icon(
-                                Icons.arrow_back_ios,
-                                color: Colors.white,
-                              )),
-                          width: 50,
-                          height: 50,
+                    children: <Widget>[
+                      Text(
+                        'Your Experience',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 30,
+                        width: 150,
+                        decoration: BoxDecoration(
+                            border: Border.all(
+                                color: Color.fromARGB(0, 135, 201, 146)),
+                            borderRadius: BorderRadius.circular(30.0),
+                            color: Color.fromARGB(0, 253, 253, 253)),
+                        child: RatingBar.builder(
+                          initialRating: rating,
+                          itemSize: 25,
+                          minRating: 1,
+                          updateOnDrag: true,
+                          onRatingUpdate: (rating) => setState(() {
+                            this.rating = rating;
+                          }),
+                          itemBuilder: (context, _) => const Icon(
+                            Icons.star,
+                            color: Colors.amber,
+                          ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(
-                    height: 100,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 0, 20, 20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Container(
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Color.fromARGB(92, 255, 255, 255),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(75, 255, 255, 255)),
-                              child: IconButton(
-                                onPressed: yalaImages,
-                                icon: Icon(
-                                  Icons.photo_library_outlined,
-                                  size: 30,
-                                  color: Color.fromARGB(255, 255, 255, 255),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Container(
-                              alignment: Alignment.center,
-                              height: 50,
-                              width: 50,
-                              decoration: BoxDecoration(
-                                  border: Border.all(
-                                    color: Color.fromARGB(92, 255, 255, 255),
-                                  ),
-                                  borderRadius: BorderRadius.circular(10),
-                                  color: Color.fromARGB(75, 255, 255, 255)),
-                              child: Text(
-                                '$rating',
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold,
-                                    color: Colors.white),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 30,
-                  ),
-                  Container(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 25),
-                      child: Text(
-                        'Yala National Park',
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: <Widget>[
-                    Text(
-                      'Your Experience',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: 30,
-                      width: 150,
-                      decoration: BoxDecoration(
-                          border: Border.all(
-                              color: Color.fromARGB(0, 135, 201, 146)),
-                          borderRadius: BorderRadius.circular(30.0),
-                          color: Color.fromARGB(0, 253, 253, 253)),
-                      child: RatingBar.builder(
-                        initialRating: rating,
-                        itemSize: 25,
-                        minRating: 1,
-                        updateOnDrag: true,
-                        onRatingUpdate: (rating) => setState(() {
-                          this.rating = rating;
-                        }),
-                        itemBuilder: (context, _) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Container(
-                child: const Center(
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25),
+                child: Container(
+                  child: const Center(
+                    child: Text(
+                      "Yala (යාල) National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area.",
+                      style: TextStyle(
+                          color: Color.fromARGB(255, 0, 0, 0),
+                          fontWeight: FontWeight.w200),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 30,
+              ),
+              Container(
+                alignment: Alignment.centerLeft,
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
                   child: Text(
-                    "Yala (යාල) National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area.",
-                    style: TextStyle(
-                        color: Color.fromARGB(255, 0, 0, 0),
-                        fontWeight: FontWeight.w200),
+                    "Top Hotels And Resorts",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 30,
-            ),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Text(
-                  "Top Hotels And Resorts",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),
-                ),
+              SizedBox(
+                height: 20,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 25.0),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                  Container(
-                    height: 100,
-                    width: 278,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Row(
-                children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                  Container(
-                    height: 100,
-                    width: 278,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: Row(
-                children: [
-                  Container(
-                    height: 100,
-                    width: 100,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                  Container(
-                    height: 100,
-                    width: 278,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20.0),
-                        color: Colors.redAccent),
-                  ),
-                ],
-              ),
-            ),
-          ],
+              FutureBuilder(
+                future: hotel.get(),
+                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                  if (snapshot.hasData) {
+                    print('----->');
+                    print(snapshot.data?.first.name);
+                    List<Hotel> data = snapshot.data!;
+                    print(data.length);
+                    return ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: data.length,
+                      itemBuilder: ((context, index) {
+                        return InkWell(
+                          // onTap: () => bottomSheet(context),
+                          child: Column(
+                            children: [
+                              // HotelView(hotelelladata: data[index]),
+                              SizedBox(
+                                height: 30,
+                              )
+                            ],
+                          ),
+                        );
+                      }),
+                    );
+                  } else {
+                    return CircularProgressIndicator();
+                  }
+                }),
+              )
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 
   void yalaImages() {
@@ -916,7 +897,7 @@ class _adamsPeakState extends State<adamsPeak> {
                               decoration: BoxDecoration(
                                 image: const DecorationImage(
                                     image: NetworkImage(
-                                        'https://res.klook.com/images/fl_lossy.progressive,q_65/c_fill,w_1200,h_630/w_80,x_15,y_15,g_south_west,l_Klook_water_br_trans_yhcmh3/activities/aafi5eaxotbgtvdzy3en/Yala%20National%20Park%20Safari%20Experience%20from%20Mirissa,%20Sri%20Lanka.jpg'),
+                                        'https://bestofceylon.com/images/ella/trek-to-little-adams-peak/trek-to-little-adams-peak1.jpg'),
                                     fit: BoxFit.cover),
                                 borderRadius: BorderRadius.circular(30),
                                 color: Colors.red,

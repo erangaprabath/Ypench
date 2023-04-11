@@ -1,23 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/belihuloyaModel.dart';
+import 'package:flutter_application_1/model/ellaModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HotelView extends StatefulWidget {
-  HotelView({Key? key, required this.hotel}) : super(key: key);
-  final Hotel hotel;
+class hotelViewBelihuloya extends StatefulWidget {
+  hotelViewBelihuloya({Key? key, required this.hotelBelihuloya})
+      : super(key: key);
+  final HotelBelihuloya hotelBelihuloya;
 
   @override
-  State<HotelView> createState() => _HotelViewState();
+  State<hotelViewBelihuloya> createState() => _hotelViewBelihuloyaState();
 }
 
-class _HotelViewState extends State<HotelView> {
+class _hotelViewBelihuloyaState extends State<hotelViewBelihuloya> {
   @override
   Widget build(BuildContext context) {
     test testcall = test();
 
-    String? rating = widget.hotel.rating;
-    String? number = widget.hotel.contact;
-    String? locationUrl = widget.hotel.locationUrl;
+    String? rating = widget.hotelBelihuloya.rating;
+    String? number = widget.hotelBelihuloya.contact;
+    String? locationUrl = widget.hotelBelihuloya.locationUrl;
     print(number);
     double result = double.parse(rating!);
     return Padding(
@@ -33,7 +36,7 @@ class _HotelViewState extends State<HotelView> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    widget.hotel.ImageUrl ?? '',
+                    widget.hotelBelihuloya.ImageUrl ?? '',
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
@@ -64,7 +67,7 @@ class _HotelViewState extends State<HotelView> {
                     Row(
                       children: [
                         Text(
-                          '${widget.hotel.name}',
+                          '${widget.hotelBelihuloya.name}',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
@@ -85,7 +88,7 @@ class _HotelViewState extends State<HotelView> {
                       ],
                     ),
                     Text(
-                      '${widget.hotel.address}',
+                      '${widget.hotelBelihuloya.address}',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
@@ -111,7 +114,7 @@ class _HotelViewState extends State<HotelView> {
                           width: 5,
                         ),
                         Text(
-                          '(${widget.hotel.rating})',
+                          '(${widget.hotelBelihuloya.rating})',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,
@@ -137,7 +140,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.days}',
+                              '${widget.hotelBelihuloya.days}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -164,7 +167,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.rooms}',
+                              '${widget.hotelBelihuloya.rooms}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -191,7 +194,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'RS:${widget.hotel.price}',
+                              'RS:${widget.hotelBelihuloya.price}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,

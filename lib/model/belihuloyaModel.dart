@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-class Hotel {
+class HotelBelihuloya {
   String? owner;
   String? name;
   String? ImageUrl;
@@ -18,26 +18,20 @@ class Hotel {
   String? rating;
   String? locationUrl;
 
-  Hotel(this.owner, this.name, this.ImageUrl, this.address, this.days,
+  HotelBelihuloya(this.owner, this.name, this.ImageUrl, this.address, this.days,
       this.price, this.rooms, this.rating, this.contact, this.locationUrl);
 }
 
-class users {
-  String? username;
+class servicedatadelihuloya {
+  List<HotelBelihuloya> hotelBelhuloya = [];
 
-  users(this.username);
-}
-
-class servicedata {
-  List<Hotel> hotel = [];
-
-  Future<List<Hotel>> get() async {
-    final currentUser = FirebaseFirestore.instance.collection('Yala');
+  Future<List<HotelBelihuloya>> get() async {
+    final currentUser = FirebaseFirestore.instance.collection('Belihuloya');
 
     await currentUser.get().then((value) {
-      hotel = [];
+      hotelBelhuloya = [];
       value.docs.forEach((element) {
-        hotel.add(Hotel(
+        hotelBelhuloya.add(HotelBelihuloya(
             element.data()['owner'],
             element.data()['name'],
             element.data()['ImageUrl'],
@@ -50,12 +44,12 @@ class servicedata {
             element.data()['locationUrl']));
       });
 
-      print(hotel.length);
-      print(hotel.first.owner);
-      print(hotel.first.days);
-      print(hotel.first.contact);
+      print(hotelBelhuloya.length);
+      print('beliioi${hotelBelhuloya.first.owner}');
+      print(hotelBelhuloya.first.days);
+      print(hotelBelhuloya.first.contact);
     });
 
-    return hotel;
+    return hotelBelhuloya;
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/campingpage.dart';
 import 'package:flutter_application_1/screens/diving.dart';
 import 'package:flutter_application_1/screens/hiking.dart';
@@ -113,8 +114,6 @@ class _mainScreenState extends State<mainScreen> {
                           size: MediaQuery.of(context).size.height / 20,
                           color: Color.fromARGB(255, 80, 65, 82),
                         ),
-
-                        // Text('hello' + User.uid),
                         SizedBox(
                           width: MediaQuery.of(context).size.width / 1.6,
                         ),

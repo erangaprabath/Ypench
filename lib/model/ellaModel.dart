@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-class Hotel {
+class HotelElla {
   String? owner;
   String? name;
   String? ImageUrl;
@@ -18,26 +18,20 @@ class Hotel {
   String? rating;
   String? locationUrl;
 
-  Hotel(this.owner, this.name, this.ImageUrl, this.address, this.days,
+  HotelElla(this.owner, this.name, this.ImageUrl, this.address, this.days,
       this.price, this.rooms, this.rating, this.contact, this.locationUrl);
 }
 
-class users {
-  String? username;
+class servicedataella {
+  List<HotelElla> hotelella = [];
 
-  users(this.username);
-}
-
-class servicedata {
-  List<Hotel> hotel = [];
-
-  Future<List<Hotel>> get() async {
-    final currentUser = FirebaseFirestore.instance.collection('Yala');
+  Future<List<HotelElla>> get() async {
+    final currentUser = FirebaseFirestore.instance.collection('Ella');
 
     await currentUser.get().then((value) {
-      hotel = [];
+      hotelella = [];
       value.docs.forEach((element) {
-        hotel.add(Hotel(
+        hotelella.add(HotelElla(
             element.data()['owner'],
             element.data()['name'],
             element.data()['ImageUrl'],
@@ -50,12 +44,12 @@ class servicedata {
             element.data()['locationUrl']));
       });
 
-      print(hotel.length);
-      print(hotel.first.owner);
-      print(hotel.first.days);
-      print(hotel.first.contact);
+      print(hotelella.length);
+      print(hotelella.first.owner);
+      print(hotelella.first.days);
+      print(hotelella.first.contact);
     });
 
-    return hotel;
+    return hotelella;
   }
 }
