@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/model/adamsPeek.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/internetConnectionChecker.dart';
 import 'package:flutter_application_1/widget/container/hotel_view.dart';
+import 'package:flutter_application_1/widget/container/hotel_viewadams.dart';
 
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
@@ -303,57 +305,63 @@ class _hikingPageState extends State<hikingPage> {
                             SizedBox(
                               width: MediaQuery.of(context).size.width / 19,
                             ),
-                            Container(
-                              height: MediaQuery.of(context).size.height / 2.4,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Color.fromARGB(26, 0, 0, 0),
-                                      blurRadius: 20,
-                                      spreadRadius: 2),
-                                ],
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                      'https://saltinourhair.com/wp-content/uploads/2018/05/sigiriya-lion-rock-sri-lanka.jpg',
-                                    ),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.red,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Sigiriya & \nPidurangula',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: const <Widget>[
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        Text(
-                                          'northern Matale \nDistrict \nDambulla \nCentral Province',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
-                                    )
+                            GestureDetector(
+                              onTap: () {
+                                print("clicked");
+                              },
+                              child: Container(
+                                height:
+                                    MediaQuery.of(context).size.height / 2.4,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Color.fromARGB(26, 0, 0, 0),
+                                        blurRadius: 20,
+                                        spreadRadius: 2),
                                   ],
+                                  image: const DecorationImage(
+                                      image: NetworkImage(
+                                        'https://saltinourhair.com/wp-content/uploads/2018/05/sigiriya-lion-rock-sri-lanka.jpg',
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color: Colors.red,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const <Widget>[
+                                          Text(
+                                            'Sigiriya & \nPidurangula',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: const <Widget>[
+                                          Icon(
+                                            Icons.location_on_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          Text(
+                                            'northern Matale \nDistrict \nDambulla \nCentral Province',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.normal),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -365,115 +373,127 @@ class _hikingPageState extends State<hikingPage> {
 
                         Row(
                           children: <Widget>[
-                            Container(
-                              alignment: Alignment.bottomLeft,
-                              height: MediaQuery.of(context).size.height / 2.4,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Color.fromARGB(26, 0, 0, 0),
-                                      blurRadius: 20,
-                                      spreadRadius: 2),
-                                ],
-                                image: const DecorationImage(
-                                    image: NetworkImage(
-                                      'https://images.fineartamerica.com/images-medium-large/worlds-end-horton-plains-national-park-sri-lanka-jenny-rainbow.jpg',
-                                    ),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.red,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Horton Plains & \nWorld’s End',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: const <Widget>[
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        Text(
-                                          ' Ohiya, Sri Lanka, \nNuwara Eliya ',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
-                                    )
+                            GestureDetector(
+                              onTap: () {
+                                print("clicked2");
+                              },
+                              child: Container(
+                                alignment: Alignment.bottomLeft,
+                                height:
+                                    MediaQuery.of(context).size.height / 2.4,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Color.fromARGB(26, 0, 0, 0),
+                                        blurRadius: 20,
+                                        spreadRadius: 2),
                                   ],
+                                  image: const DecorationImage(
+                                      image: NetworkImage(
+                                        'https://images.fineartamerica.com/images-medium-large/worlds-end-horton-plains-national-park-sri-lanka-jenny-rainbow.jpg',
+                                      ),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color: Colors.red,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const <Widget>[
+                                          Text(
+                                            'Horton Plains & \nWorld’s End',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: const <Widget>[
+                                          Icon(
+                                            Icons.location_on_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          Text(
+                                            ' Ohiya, Sri Lanka, \nNuwara Eliya ',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.normal),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
                             SizedBox(
                               width: MediaQuery.of(context).size.width / 19,
                             ),
-                            Container(
-                              alignment: Alignment.bottomLeft,
-                              height: MediaQuery.of(context).size.height / 3.2,
-                              width: MediaQuery.of(context).size.width / 2.5,
-                              decoration: BoxDecoration(
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Color.fromARGB(26, 0, 0, 0),
-                                      blurRadius: 20,
-                                      spreadRadius: 2),
-                                ],
-                                image: const DecorationImage(
-                                    image: const NetworkImage(
-                                        'https://images.squarespace-cdn.com/content/v1/596b2969d2b85786e6892853/1531922870345-RPXQFZ5ETNX6CL2PPRGV/The+view+from+Lipton%27s+Seat+at+sunrise'),
-                                    fit: BoxFit.cover),
-                                borderRadius: BorderRadius.circular(20.0),
-                                color: Colors.red,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: <Widget>[
-                                    Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
-                                      children: const <Widget>[
-                                        Text(
-                                          'Lipton’s Seat  ',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontSize: 15,
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                    Row(
-                                      children: const <Widget>[
-                                        Icon(
-                                          Icons.location_on_outlined,
-                                          color: Colors.white,
-                                        ),
-                                        Text(
-                                          'Dambethenna \nEstate,\nHaputhale, \nLipton Seat Rd, \nSri Lanka, \nHaputale ',
-                                          style: TextStyle(
-                                              color: Colors.white,
-                                              fontWeight: FontWeight.normal),
-                                        )
-                                      ],
-                                    )
+                            GestureDetector(
+                              onTap: () {
+                                print("clicked3");
+                              },
+                              child: Container(
+                                alignment: Alignment.bottomLeft,
+                                height:
+                                    MediaQuery.of(context).size.height / 3.2,
+                                width: MediaQuery.of(context).size.width / 2.5,
+                                decoration: BoxDecoration(
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Color.fromARGB(26, 0, 0, 0),
+                                        blurRadius: 20,
+                                        spreadRadius: 2),
                                   ],
+                                  image: const DecorationImage(
+                                      image: const NetworkImage(
+                                          'https://images.squarespace-cdn.com/content/v1/596b2969d2b85786e6892853/1531922870345-RPXQFZ5ETNX6CL2PPRGV/The+view+from+Lipton%27s+Seat+at+sunrise'),
+                                      fit: BoxFit.cover),
+                                  borderRadius: BorderRadius.circular(20.0),
+                                  color: Colors.red,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: <Widget>[
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: const <Widget>[
+                                          Text(
+                                            'Lipton’s Seat  ',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: const <Widget>[
+                                          Icon(
+                                            Icons.location_on_outlined,
+                                            color: Colors.white,
+                                          ),
+                                          Text(
+                                            'Dambethenna \nEstate,\nHaputhale, \nLipton Seat Rd, \nSri Lanka, \nHaputale ',
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.normal),
+                                          )
+                                        ],
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -615,7 +635,7 @@ class adamsPeak extends StatefulWidget {
 class _adamsPeakState extends State<adamsPeak> {
   @override
   double rating = 0;
-  servicedata hotel = servicedata();
+  servicedataadms hotelAdamsP = servicedataadms();
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
@@ -795,7 +815,7 @@ class _adamsPeakState extends State<adamsPeak> {
                 child: Container(
                   child: const Center(
                     child: Text(
-                      "Yala (යාල) National Park is the most visited and second largest national park in Sri Lanka, bordering the Indian Ocean. The park consists of five blocks, two of which are now open to the public, and also adjoining parks. The blocks have individual names such as, Ruhuna National Park (Block 1), and Kumana National Park or 'Yala East' for the adjoining area.",
+                      "Adam's Peak or Śrī Pāda is a 2,243 m (7,359 ft) tall conical sacred mountain located in central Sri Lanka.[1][2] It is well known for the Śrī Pāda (Sinhala: ශ්‍රී පාද), i.e., sacred footprint, a 1.8 m (5 ft 11 in) rock formation near the summit. In Buddhist tradition the print is held to be the footprint of the Buddha, in Hindu tradition that of Hanuman or Shiva (Tamil: சிவனொளிபாதமலை, lit. 'Sivanolipaathamalai'), i.e., Mountain of Shiva's Light, and in some Islamic and Christian traditions that of Adam, or that of St. Thomas.[2][3][4]The mountain is also known as Mount Malaya in Buddhist sources, particularly the Mahayana Lankavatara Sutra, which states that the Buddha preached this sutra on top of the mountain. According to this sutra, the mountain was the abode of Rāvanā, overlord of the Raskshasas and ruler of Laṅkā.[5][6] Other names in Sanskrit sources include Mount Lanka, Ratnagiri (Mountain of Gems), Malayagiri (Mount Malaya) or Mount Rohana.[1]The mountain is also seen as the abode of the deity Saman and also goes by various names associated with this, including Sumanakūta (Sumana's Mountain) and Samanalakanda (Saman's Mountain or Mountain of the Butteries).[1][2]",
                       style: TextStyle(
                           color: Color.fromARGB(255, 0, 0, 0),
                           fontWeight: FontWeight.w200),
@@ -820,22 +840,23 @@ class _adamsPeakState extends State<adamsPeak> {
                 height: 20,
               ),
               FutureBuilder(
-                future: hotel.get(),
-                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                future: hotelAdamsP.get(),
+                builder: ((context, AsyncSnapshot<List<Hoteladms>> snapshot) {
                   if (snapshot.hasData) {
                     print('----->');
                     print(snapshot.data?.first.name);
-                    List<Hotel> data = snapshot.data!;
+                    List<Hoteladms> data = snapshot.data!;
                     print(data.length);
                     return ListView.builder(
                       shrinkWrap: true,
+                      physics: BouncingScrollPhysics(),
                       itemCount: data.length,
                       itemBuilder: ((context, index) {
                         return InkWell(
                           // onTap: () => bottomSheet(context),
                           child: Column(
                             children: [
-                              // HotelView(hotelelladata: data[index]),
+                              hotelViewAdams(hoteladms: data[index]),
                               SizedBox(
                                 height: 30,
                               )

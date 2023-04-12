@@ -4,11 +4,13 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/belihuloyaModel.dart';
 import 'package:flutter_application_1/model/ellaModel.dart';
+import 'package:flutter_application_1/model/kuckelsModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:flutter_application_1/screens/bottomappbar.dart';
 import 'package:flutter_application_1/widget/container/hotel_view.dart';
 import 'package:flutter_application_1/widget/container/hotel_viewBelihuloya.dart';
 import 'package:flutter_application_1/widget/container/hotel_viewElla.dart';
+import 'package:flutter_application_1/widget/container/hotel_viewKn.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
@@ -2009,7 +2011,7 @@ class knucklesInside extends StatefulWidget {
 }
 
 class _knucklesInsideState extends State<knucklesInside> {
-  servicedata hotel = servicedata();
+  servicedatakn hotelkn = servicedatakn();
   double rating = 0;
   @override
   Widget build(BuildContext context) {
@@ -2217,12 +2219,12 @@ class _knucklesInsideState extends State<knucklesInside> {
                 height: 20,
               ),
               FutureBuilder(
-                future: hotel.get(),
-                builder: ((context, AsyncSnapshot<List<Hotel>> snapshot) {
+                future: hotelkn.get(),
+                builder: ((context, AsyncSnapshot<List<HotelKn>> snapshot) {
                   if (snapshot.hasData) {
                     print('----->');
                     print(snapshot.data?.first.name);
-                    List<Hotel> data = snapshot.data!;
+                    List<HotelKn> data = snapshot.data!;
                     print(data.length);
                     return ListView.builder(
                       shrinkWrap: true,
@@ -2232,7 +2234,7 @@ class _knucklesInsideState extends State<knucklesInside> {
                         return InkWell(
                           child: Column(
                             children: [
-                              HotelView(hotel: data[index]),
+                              hotelViewKn(hotelKn: data[index]),
                               SizedBox(
                                 height: 30,
                               )
