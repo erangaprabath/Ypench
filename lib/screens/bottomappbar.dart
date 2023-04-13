@@ -36,10 +36,11 @@ class _appbarState extends State<appbar> {
         body: screens[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           selectedFontSize: 10,
+          unselectedItemColor: Colors.white,
           unselectedFontSize: 10,
           iconSize: MediaQuery.of(context).size.height / 40,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: Color.fromARGB(0, 245, 0, 0),
+          backgroundColor: Color.fromARGB(255, 37, 34, 34),
           elevation: 0,
           selectedItemColor: Colors.blue,
           currentIndex: _currentIndex,

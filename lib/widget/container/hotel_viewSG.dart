@@ -1,31 +1,27 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/common/purchasefuction.dart';
-import 'package:flutter_application_1/common/purchaseview.dart';
+import 'package:flutter_application_1/model/belihuloyaModel.dart';
+import 'package:flutter_application_1/model/ellaModel.dart';
+import 'package:flutter_application_1/model/kuckelsModel.dart';
+import 'package:flutter_application_1/model/sigiriyaModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class HotelView extends StatefulWidget {
-  HotelView({Key? key, required this.hotel}) : super(key: key);
-  final Hotel hotel;
+class hotelViewSg extends StatefulWidget {
+  hotelViewSg({Key? key, required this.hotelsg}) : super(key: key);
+  final Hotelsigiriya hotelsg;
 
   @override
-  State<HotelView> createState() => _HotelViewState();
+  State<hotelViewSg> createState() => _hotelViewSgState();
 }
 
-class _HotelViewState extends State<HotelView> {
-  purchaseView() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return purcahse_View();
-    }));
-  }
-
+class _hotelViewSgState extends State<hotelViewSg> {
   @override
   Widget build(BuildContext context) {
     test testcall = test();
 
-    String? rating = widget.hotel.rating;
-    String? number = widget.hotel.contact;
-    String? locationUrl = widget.hotel.locationUrl;
+    String? rating = widget.hotelsg.rating;
+    String? number = widget.hotelsg.contact;
+    String? locationUrl = widget.hotelsg.locationUrl;
     print(number);
     double result = double.parse(rating!);
     return Padding(
@@ -41,7 +37,7 @@ class _HotelViewState extends State<HotelView> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    widget.hotel.ImageUrl ?? '',
+                    widget.hotelsg.ImageUrl ?? '',
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
@@ -72,7 +68,7 @@ class _HotelViewState extends State<HotelView> {
                     Row(
                       children: [
                         Text(
-                          '${widget.hotel.name}',
+                          '${widget.hotelsg.name}',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
@@ -93,7 +89,7 @@ class _HotelViewState extends State<HotelView> {
                       ],
                     ),
                     Text(
-                      '${widget.hotel.address}',
+                      '${widget.hotelsg.address}',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
@@ -119,7 +115,7 @@ class _HotelViewState extends State<HotelView> {
                           width: 5,
                         ),
                         Text(
-                          '(${widget.hotel.rating})',
+                          '(${widget.hotelsg.rating})',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,
@@ -145,7 +141,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.days}',
+                              '${widget.hotelsg.days}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -172,7 +168,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotel.rooms}',
+                              '${widget.hotelsg.rooms}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -199,7 +195,7 @@ class _HotelViewState extends State<HotelView> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'RS:${widget.hotel.price}',
+                              'RS:${widget.hotelsg.price}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -288,7 +284,7 @@ class _HotelViewState extends State<HotelView> {
                           alignment: Alignment.center,
                           child: ButtonTheme(
                             child: MaterialButton(
-                              onPressed: purshase,
+                              onPressed: (() {}),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
@@ -334,15 +330,6 @@ class _HotelViewState extends State<HotelView> {
         ],
       ),
     );
-  }
-
-  purshase() {
-    String? rommsamount = widget.hotel.rooms;
-    double result = double.parse(rommsamount!);
-
-    double price = result * 10;
-
-    print(price);
   }
 }
 

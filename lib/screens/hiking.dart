@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/adamsPeek.dart';
 import 'package:flutter_application_1/model/user.dart';
+import 'package:flutter_application_1/screens/hikingSubplaces/sigiriyaView.dart';
 import 'package:flutter_application_1/screens/internetConnectionChecker.dart';
 import 'package:flutter_application_1/widget/container/hotel_view.dart';
 import 'package:flutter_application_1/widget/container/hotel_viewadams.dart';
@@ -22,6 +23,12 @@ class _hikingPageState extends State<hikingPage> {
   void adamspeakinside() {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
       return adamsPeak();
+    }));
+  }
+
+  sigiriyainside() {
+    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+      return sigiriyaInside();
     }));
   }
 
@@ -307,7 +314,7 @@ class _hikingPageState extends State<hikingPage> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                print("clicked");
+                                sigiriyainside();
                               },
                               child: Container(
                                 height:

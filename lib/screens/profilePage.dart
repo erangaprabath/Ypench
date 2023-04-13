@@ -13,6 +13,7 @@ class profileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 37, 34, 34),
       drawer: Drawer(
         child: Column(
           children: <Widget>[],

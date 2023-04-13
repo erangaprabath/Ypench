@@ -35,7 +35,7 @@ class _mainScreenState extends State<mainScreen> {
             icon: Icon(
               Icons.search,
               size: MediaQuery.of(context).size.height / 30,
-              color: Color.fromARGB(55, 80, 65, 82),
+              color: Color.fromARGB(106, 255, 255, 255),
             ),
           ),
           border: OutlineInputBorder(
@@ -44,7 +44,7 @@ class _mainScreenState extends State<mainScreen> {
             borderSide: BorderSide(
               style: BorderStyle.solid,
               width: MediaQuery.of(context).size.height / 40,
-              color: Color.fromARGB(255, 241, 234, 234),
+              color: Color.fromARGB(255, 255, 255, 255),
             ),
           ),
           enabledBorder: OutlineInputBorder(
@@ -52,13 +52,16 @@ class _mainScreenState extends State<mainScreen> {
             borderSide: const BorderSide(
               style: BorderStyle.solid,
               width: 1.0,
-              color: Color.fromARGB(6, 0, 0, 0),
+              color: Color.fromARGB(138, 255, 255, 255),
             ),
           ),
-          fillColor: Color.fromARGB(255, 247, 243, 243),
+          fillColor: Color.fromARGB(0, 247, 243, 243),
           filled: true,
           hintText: 'Search',
-          hintStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+          hintStyle: const TextStyle(
+              fontWeight: FontWeight.w600,
+              fontSize: 12,
+              color: Color.fromARGB(96, 255, 255, 255)),
         ),
       ),
       height: MediaQuery.of(context).size.height / 15,
@@ -90,12 +93,13 @@ class _mainScreenState extends State<mainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 37, 34, 34),
       resizeToAvoidBottomInset: false,
       body: Center(
           child: SingleChildScrollView(
         physics: ClampingScrollPhysics(),
         child: Container(
-          color: Colors.white,
+          color: Color.fromARGB(255, 37, 34, 34),
           child: Padding(
             padding: EdgeInsets.all(MediaQuery.of(context).size.width / 16),
             child: Column(
@@ -112,7 +116,7 @@ class _mainScreenState extends State<mainScreen> {
                         Icon(
                           Icons.account_circle,
                           size: MediaQuery.of(context).size.height / 20,
-                          color: Color.fromARGB(255, 80, 65, 82),
+                          color: Color.fromARGB(255, 255, 255, 255),
                         ),
                         SizedBox(
                           width: MediaQuery.of(context).size.width / 1.6,
@@ -121,7 +125,7 @@ class _mainScreenState extends State<mainScreen> {
                           onPressed: () {},
                           icon: Icon(
                             Icons.notifications,
-                            color: const Color.fromARGB(255, 80, 65, 82),
+                            color: Color.fromARGB(255, 255, 255, 255),
                             size: MediaQuery.of(context).size.width / 13,
                           ),
                         ),
@@ -135,7 +139,7 @@ class _mainScreenState extends State<mainScreen> {
                     Text(
                       'Where do\nyou want to go?',
                       style: TextStyle(
-                        color: Colors.black,
+                        color: Color.fromARGB(255, 255, 255, 255),
                         fontSize: MediaQuery.of(context).size.height / 30,
                         fontWeight: (FontWeight.w800),
                       ),
@@ -154,7 +158,7 @@ class _mainScreenState extends State<mainScreen> {
                       style: TextStyle(
                           fontWeight: FontWeight.w800,
                           fontSize: MediaQuery.of(context).size.height / 30,
-                          color: Colors.black),
+                          color: Color.fromARGB(255, 255, 255, 255)),
                     ),
                   ],
                 ),
@@ -171,8 +175,8 @@ class _mainScreenState extends State<mainScreen> {
                           onTap: camping,
                           child: Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: const Color.fromARGB(255, 247, 243, 243),
+                              borderRadius: BorderRadius.circular(15.0),
+                              color: Color.fromARGB(255, 88, 87, 88),
                             ),
                             alignment: Alignment.centerLeft,
                             height: MediaQuery.of(context).size.height / 12,
@@ -218,9 +222,9 @@ class _mainScreenState extends State<mainScreen> {
                           child: Container(
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(
-                                20.0,
+                                15.0,
                               ),
-                              color: const Color.fromARGB(255, 247, 243, 243),
+                              color: const Color.fromARGB(255, 88, 87, 83),
                             ),
                             height: MediaQuery.of(context).size.height / 12,
                             width: MediaQuery.of(context).size.width / 3.3,
@@ -235,7 +239,8 @@ class _mainScreenState extends State<mainScreen> {
                                             'assets/hiking-family-in-nature-trekking-man-woman-vector-21256804.png',
                                           ),
                                           fit: BoxFit.cover),
-                                      color: const Color.fromARGB(255, 0, 0, 0),
+                                      color:
+                                          const Color.fromARGB(255, 88, 87, 88),
                                       borderRadius: BorderRadius.circular(10.0),
                                     ),
                                     height:
@@ -262,8 +267,8 @@ class _mainScreenState extends State<mainScreen> {
                           onTap: diving,
                           child: Container(
                             decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20.0),
-                              color: const Color.fromARGB(255, 247, 243, 243),
+                              borderRadius: BorderRadius.circular(15.0),
+                              color: const Color.fromARGB(255, 88, 87, 88),
                             ),
                             alignment: Alignment.centerLeft,
                             height: MediaQuery.of(context).size.height / 12,
@@ -314,7 +319,7 @@ class _mainScreenState extends State<mainScreen> {
                       'Popular in Country',
                       style: TextStyle(
                           fontWeight: FontWeight.w600,
-                          color: Colors.black,
+                          color: Color.fromARGB(255, 255, 255, 255),
                           fontSize: 14.0),
                     ),
                   ],

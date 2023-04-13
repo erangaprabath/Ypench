@@ -30,7 +30,7 @@ class _divingPageState extends State<divingPage> {
           ),
         ],
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
-        elevation: .5,
+        elevation: 0.5,
         iconTheme: const IconThemeData(color: Color.fromARGB(255, 5, 105, 255)),
         title: const Text(
           'DIVING',
