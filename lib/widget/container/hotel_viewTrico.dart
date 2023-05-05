@@ -1,27 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/model/belihuloyaModel.dart';
+import 'package:flutter_application_1/model/adamsPeek.dart';
 import 'package:flutter_application_1/model/ellaModel.dart';
-import 'package:flutter_application_1/model/kuckelsModel.dart';
-import 'package:flutter_application_1/model/sigiriyaModel.dart';
+import 'package:flutter_application_1/model/tricomaleeModel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class hotelViewSg extends StatefulWidget {
-  hotelViewSg({Key? key, required this.hotelsg}) : super(key: key);
-  final Hotelsigiriya hotelsg;
+class hotelViewTrinco extends StatefulWidget {
+  hotelViewTrinco({Key? key, required this.hoteltrico}) : super(key: key);
+  final HotelTrinco hoteltrico;
 
   @override
-  State<hotelViewSg> createState() => _hotelViewSgState();
+  State<hotelViewTrinco> createState() => _hotelViewTrincoState();
 }
 
-class _hotelViewSgState extends State<hotelViewSg> {
+class _hotelViewTrincoState extends State<hotelViewTrinco> {
   @override
   Widget build(BuildContext context) {
     test testcall = test();
 
-    String? rating = widget.hotelsg.rating;
-    String? number = widget.hotelsg.contact;
-    String? locationUrl = widget.hotelsg.locationUrl;
+    String? rating = widget.hoteltrico.rating;
+    String? number = widget.hoteltrico.contact;
+    String? locationUrl = widget.hoteltrico.locationUrl;
     print(number);
     double result = double.parse(rating!);
     return Padding(
@@ -37,7 +36,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    widget.hotelsg.ImageUrl ?? '',
+                    widget.hoteltrico.ImageUrl ?? '',
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
@@ -68,7 +67,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                     Row(
                       children: [
                         Text(
-                          '${widget.hotelsg.name}',
+                          '${widget.hoteltrico.name}',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
@@ -89,7 +88,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                       ],
                     ),
                     Text(
-                      '${widget.hotelsg.address}',
+                      '${widget.hoteltrico.address}',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
@@ -115,7 +114,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                           width: 5,
                         ),
                         Text(
-                          '(${widget.hotelsg.rating})',
+                          '(${widget.hoteltrico.rating})',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,
@@ -141,7 +140,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotelsg.days}',
+                              '${widget.hoteltrico.days}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -168,7 +167,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotelsg.rooms}',
+                              '${widget.hoteltrico.rooms}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -195,7 +194,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'RS:${widget.hotelsg.price}',
+                              'RS:${widget.hoteltrico.price}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -284,7 +283,9 @@ class _hotelViewSgState extends State<hotelViewSg> {
                           alignment: Alignment.center,
                           child: ButtonTheme(
                             child: MaterialButton(
-                              onPressed: (() {}),
+                              onPressed: (() {
+                                purshase();
+                              }),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [

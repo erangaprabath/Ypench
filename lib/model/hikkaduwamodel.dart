@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 
-class Hoteladms {
+class Hotelhikka {
   String? owner;
   String? name;
   String? ImageUrl;
@@ -18,20 +18,20 @@ class Hoteladms {
   String? rating;
   String? locationUrl;
 
-  Hoteladms(this.owner, this.name, this.ImageUrl, this.address, this.days,
+  Hotelhikka(this.owner, this.name, this.ImageUrl, this.address, this.days,
       this.price, this.rooms, this.rating, this.contact, this.locationUrl);
 }
 
-class servicedataadms {
-  List<Hoteladms> hoteladmspeek = [];
+class servicedatahikka {
+  List<Hotelhikka> hotelhikkaduwa = [];
 
-  Future<List<Hoteladms>> get() async {
-    final currentUser = FirebaseFirestore.instance.collection("Adam'sPeek");
+  Future<List<Hotelhikka>> get() async {
+    final currentUser = FirebaseFirestore.instance.collection("Hikkaduwa");
 
     await currentUser.get().then((value) {
-      hoteladmspeek = [];
+      hotelhikkaduwa = [];
       value.docs.forEach((element) {
-        hoteladmspeek.add(Hoteladms(
+        hotelhikkaduwa.add(Hotelhikka(
             element.data()['owner'],
             element.data()['name'],
             element.data()['img'],
@@ -43,13 +43,8 @@ class servicedataadms {
             element.data()['contact'],
             element.data()['locationUrl']));
       });
-
-      print(hoteladmspeek.length);
-      print(hoteladmspeek.first.owner);
-      print(hoteladmspeek.first.days);
-      print(hoteladmspeek.first.contact);
     });
 
-    return hoteladmspeek;
+    return hotelhikkaduwa;
   }
 }

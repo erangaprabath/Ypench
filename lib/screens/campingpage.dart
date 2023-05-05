@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/model/belihuloyaModel.dart';
 import 'package:flutter_application_1/model/ellaModel.dart';
 import 'package:flutter_application_1/model/kuckelsModel.dart';
@@ -14,6 +16,7 @@ import 'package:flutter_application_1/widget/container/hotel_viewKn.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:sliding_sheet/sliding_sheet.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'internetConnectionChecker.dart';
 
@@ -88,6 +91,7 @@ class _campainPageState extends State<campainPage> {
 
   @override
   Widget build(BuildContext context) {
+    test testcall = test();
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
@@ -142,24 +146,241 @@ class _campainPageState extends State<campainPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width / 7,
-                                height: MediaQuery.of(context).size.height / 13,
-                                decoration: BoxDecoration(
-                                  boxShadow: const [
-                                    BoxShadow(
-                                        color: Color.fromARGB(26, 0, 0, 0),
-                                        blurRadius: 20,
-                                        spreadRadius: 2),
-                                  ],
-                                  borderRadius: BorderRadius.circular(10.0),
-                                  color:
-                                      const Color.fromARGB(255, 255, 255, 255),
-                                ),
-                                child: Icon(
-                                  Icons.local_taxi,
-                                  size: MediaQuery.of(context).size.height / 30,
-                                  color: Color.fromARGB(255, 255, 0, 0),
+                              GestureDetector(
+                                onTap: () {
+                                  showCupertinoModalPopup(
+                                      context: context,
+                                      builder: ((context) {
+                                        return Scaffold(
+                                          appBar: AppBar(
+                                            title: Text(
+                                              'Taxi Service',
+                                              style: TextStyle(
+                                                  color: Colors.black),
+                                            ),
+                                            backgroundColor: Colors.white,
+                                            elevation: 0,
+                                            leading: BackButton(
+                                              color: Colors.black,
+                                            ),
+                                          ),
+                                          body: SafeArea(
+                                            child: Container(
+                                                child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child:
+                                                  StreamBuilder<QuerySnapshot>(
+                                                stream: FirebaseFirestore
+                                                    .instance
+                                                    .collection('EllaCar')
+                                                    .snapshots(),
+                                                builder: (context,
+                                                    AsyncSnapshot<QuerySnapshot>
+                                                        snapshot) {
+                                                  if (snapshot.hasData) {
+                                                    List data =
+                                                        snapshot.data!.docs;
+                                                    print(data.first['name']);
+
+                                                    return ListView.builder(
+                                                      itemCount: data.length,
+                                                      shrinkWrap: true,
+                                                      itemBuilder:
+                                                          (context, index) {
+                                                        return Padding(
+                                                          padding:
+                                                              const EdgeInsets
+                                                                  .all(8.0),
+                                                          child: Container(
+                                                            decoration: BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            10),
+                                                                color: Colors
+                                                                    .blueAccent),
+                                                            child: Padding(
+                                                              padding:
+                                                                  const EdgeInsets
+                                                                      .all(8.0),
+                                                              child: Column(
+                                                                children: [
+                                                                  Row(
+                                                                    children: [
+                                                                      Text(
+                                                                          'Owner :'),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                      ),
+                                                                      Text(
+                                                                          '${data[index]["name"]}')
+                                                                    ],
+                                                                  ),
+                                                                  Row(
+                                                                    children: [
+                                                                      Text(
+                                                                          'Vehicle Type :'),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                      ),
+                                                                      Text(
+                                                                          '${data[index]["vehicle"]}')
+                                                                    ],
+                                                                  ),
+                                                                  Row(
+                                                                    children: [
+                                                                      Text(
+                                                                          'Vehicle Number :'),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                      ),
+                                                                      Text(
+                                                                          '${data[index]["vehicleNo"]}')
+                                                                    ],
+                                                                  ),
+                                                                  Row(
+                                                                    children: [
+                                                                      Text(
+                                                                          'Contact Number :'),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            30,
+                                                                      ),
+                                                                      Text(
+                                                                          '${data[index]["contact"]}'),
+                                                                    ],
+                                                                  ),
+                                                                  Row(
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .center,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    children: [
+                                                                      Container(
+                                                                        alignment:
+                                                                            Alignment.center,
+                                                                        child:
+                                                                            ButtonTheme(
+                                                                          child:
+                                                                              MaterialButton(
+                                                                            onPressed: () =>
+                                                                                testcall.message(data[index]['contact'].toString()),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                Icon(
+                                                                                  Icons.message,
+                                                                                  size: 15,
+                                                                                  color: Color.fromARGB(255, 255, 255, 255),
+                                                                                ),
+                                                                                SizedBox(
+                                                                                  width: 10,
+                                                                                ),
+                                                                                Text(
+                                                                                  'Message',
+                                                                                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                            color: Color.fromARGB(
+                                                                                255,
+                                                                                0,
+                                                                                0,
+                                                                                0),
+                                                                            shape:
+                                                                                StadiumBorder(),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      SizedBox(
+                                                                        width:
+                                                                            10,
+                                                                      ),
+                                                                      Container(
+                                                                        alignment:
+                                                                            Alignment.center,
+                                                                        child:
+                                                                            ButtonTheme(
+                                                                          child:
+                                                                              MaterialButton(
+                                                                            onPressed: () =>
+                                                                                testcall._launchPhoneDialer(data[index]['contact']),
+                                                                            child:
+                                                                                Row(
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              children: [
+                                                                                Icon(
+                                                                                  Icons.call,
+                                                                                  color: Color.fromARGB(255, 255, 255, 255),
+                                                                                  size: 15,
+                                                                                ),
+                                                                                SizedBox(
+                                                                                  width: 10,
+                                                                                ),
+                                                                                Text(
+                                                                                  'Call',
+                                                                                  style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.white),
+                                                                                ),
+                                                                              ],
+                                                                            ),
+                                                                            color: Color.fromARGB(
+                                                                                255,
+                                                                                0,
+                                                                                0,
+                                                                                0),
+                                                                            shape:
+                                                                                StadiumBorder(),
+                                                                          ),
+                                                                        ),
+                                                                      )
+                                                                    ],
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ),
+                                                        );
+                                                      },
+                                                    );
+                                                  } else {
+                                                    return CircularProgressIndicator
+                                                        .adaptive();
+                                                  }
+                                                },
+                                              ),
+                                            )),
+                                          ),
+                                        );
+                                      }));
+                                },
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width / 7,
+                                  height:
+                                      MediaQuery.of(context).size.height / 13,
+                                  decoration: BoxDecoration(
+                                    boxShadow: const [
+                                      BoxShadow(
+                                          color: Color.fromARGB(26, 0, 0, 0),
+                                          blurRadius: 20,
+                                          spreadRadius: 2),
+                                    ],
+                                    borderRadius: BorderRadius.circular(10.0),
+                                    color: const Color.fromARGB(
+                                        255, 255, 255, 255),
+                                  ),
+                                  child: Icon(
+                                    Icons.local_taxi,
+                                    size:
+                                        MediaQuery.of(context).size.height / 30,
+                                    color: Color.fromARGB(255, 255, 0, 0),
+                                  ),
                                 ),
                               ),
                               SizedBox(
@@ -3329,3 +3550,31 @@ class _knucklesInsideState extends State<knucklesInside> {
 //     );
 //   }
 // }
+class test {
+  _launchPhoneDialer(String phoneNumber) async {
+    final phoneUrl = 'tel:$phoneNumber';
+    if (await canLaunch(phoneUrl)) {
+      await launch(phoneUrl);
+    } else {
+      throw 'Could not launch phone';
+    }
+  }
+
+  message(String phoneNumber) async {
+    final phoneUrl = 'sms:$phoneNumber';
+    if (await canLaunch(phoneUrl)) {
+      await launch(phoneUrl);
+    } else {
+      throw 'Could not launch phone';
+    }
+  }
+
+  loaction(String locationUrl) async {
+    final place = '$locationUrl';
+    if (await canLaunch(place)) {
+      await launch(place);
+    } else {
+      throw 'Could not launch phone';
+    }
+  }
+}

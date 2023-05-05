@@ -34,7 +34,7 @@ class servicedataSg {
         hotelSG.add(Hotelsigiriya(
             element.data()['owner'],
             element.data()['name'],
-            element.data()['ImageUrl'],
+            element.data()['img'],
             element.data()['address'],
             element.data()['days'],
             element.data()['price'],

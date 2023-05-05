@@ -1,7 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/common/purchasefuction.dart';
 import 'package:flutter_application_1/common/purchaseview.dart';
 import 'package:flutter_application_1/model/user.dart';
+import 'package:sliding_sheet/sliding_sheet.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HotelView extends StatefulWidget {
@@ -13,11 +16,7 @@ class HotelView extends StatefulWidget {
 }
 
 class _HotelViewState extends State<HotelView> {
-  purchaseView() {
-    Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      return purcahse_View();
-    }));
-  }
+  routerR() {}
 
   @override
   Widget build(BuildContext context) {
@@ -337,12 +336,41 @@ class _HotelViewState extends State<HotelView> {
   }
 
   purshase() {
-    String? rommsamount = widget.hotel.rooms;
-    double result = double.parse(rommsamount!);
-
-    double price = result * 10;
-
-    print(price);
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Container(
+          padding: EdgeInsets.all(16),
+          height: 90,
+          decoration: BoxDecoration(
+            color: Color.fromARGB(255, 255, 0, 0),
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "We Are Sorry!",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      "For the booking please call or message the hotel",
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+      ),
+    );
   }
 }
 

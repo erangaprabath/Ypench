@@ -206,7 +206,7 @@ class _mainScreenState extends State<mainScreen> {
                                 const Text(
                                   'Camping',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.w600,
                                       fontSize: 11),
                                 )
@@ -252,7 +252,7 @@ class _mainScreenState extends State<mainScreen> {
                                 const Text(
                                   'Hiking',
                                   style: TextStyle(
-                                      color: Color.fromARGB(255, 0, 0, 0),
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.w600,
                                       fontSize: 11),
                                 ),
@@ -298,7 +298,7 @@ class _mainScreenState extends State<mainScreen> {
                                 const Text(
                                   'Diving',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Color.fromARGB(255, 255, 255, 255),
                                       fontWeight: FontWeight.w600,
                                       fontSize: 11),
                                 )

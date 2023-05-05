@@ -2,26 +2,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/belihuloyaModel.dart';
 import 'package:flutter_application_1/model/ellaModel.dart';
 import 'package:flutter_application_1/model/kuckelsModel.dart';
-import 'package:flutter_application_1/model/sigiriyaModel.dart';
+import 'package:flutter_application_1/model/nilavelimodel.dart';
 import 'package:flutter_application_1/model/user.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class hotelViewSg extends StatefulWidget {
-  hotelViewSg({Key? key, required this.hotelsg}) : super(key: key);
-  final Hotelsigiriya hotelsg;
+class hotelViewNilla extends StatefulWidget {
+  hotelViewNilla({Key? key, required this.hotelnila}) : super(key: key);
+  final Hotelnila hotelnila;
 
   @override
-  State<hotelViewSg> createState() => _hotelViewSgState();
+  State<hotelViewNilla> createState() => _hotelViewNillaState();
 }
 
-class _hotelViewSgState extends State<hotelViewSg> {
+class _hotelViewNillaState extends State<hotelViewNilla> {
   @override
   Widget build(BuildContext context) {
     test testcall = test();
 
-    String? rating = widget.hotelsg.rating;
-    String? number = widget.hotelsg.contact;
-    String? locationUrl = widget.hotelsg.locationUrl;
+    String? rating = widget.hotelnila.rating;
+    String? number = widget.hotelnila.contact;
+    String? locationUrl = widget.hotelnila.locationUrl;
     print(number);
     double result = double.parse(rating!);
     return Padding(
@@ -37,7 +37,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(10),
                   child: Image.network(
-                    widget.hotelsg.ImageUrl ?? '',
+                    widget.hotelnila.ImageUrl ?? '',
                     errorBuilder: (context, error, stackTrace) {
                       return Icon(Icons.error);
                     },
@@ -68,7 +68,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                     Row(
                       children: [
                         Text(
-                          '${widget.hotelsg.name}',
+                          '${widget.hotelnila.name}',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 20,
@@ -89,7 +89,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                       ],
                     ),
                     Text(
-                      '${widget.hotelsg.address}',
+                      '${widget.hotelnila.address}',
                       style: TextStyle(
                           fontWeight: FontWeight.w300,
                           fontSize: 12,
@@ -115,7 +115,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                           width: 5,
                         ),
                         Text(
-                          '(${widget.hotelsg.rating})',
+                          '(${widget.hotelnila.rating})',
                           style: TextStyle(
                               fontWeight: FontWeight.w600,
                               fontSize: 12,
@@ -141,7 +141,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotelsg.days}',
+                              '${widget.hotelnila.days}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -168,7 +168,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              '${widget.hotelsg.rooms}',
+                              '${widget.hotelnila.rooms}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
@@ -195,7 +195,7 @@ class _hotelViewSgState extends State<hotelViewSg> {
                                   color: Colors.white),
                             ),
                             Text(
-                              'RS:${widget.hotelsg.price}',
+                              'RS:${widget.hotelnila.price}',
                               style: TextStyle(
                                   fontWeight: FontWeight.w500,
                                   fontSize: 10,
